@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html> <!--a button at the bottom of sign in page should led to this page where user can register an account --->
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <form id="register_form" action="register.php" onsubmit="return validateForm()" method="POST">
+            <h1>Create account</h1>
+            <label for="name" class="">Your name</label>
+            <input type="text" id="name">
+            <h6 id="nameErrorHtml"></h6><br>
+            <label for="email" class="">Email</label>
+            <input type="text" id="email">
+            <h6 id="emailErrorHtml"></h6><br>
+            <label for="password" class="">Password</label>
+            <input type="password" placeholder="At least 7 characters" id="password">
+            <h6 id="passwordErrorHtml"></h6><br>
+            
+            <input type="submit" id="registerSubmit" value="Create account">
+        </form>
+    </body>
+</html>
