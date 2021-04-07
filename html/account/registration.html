@@ -6,16 +6,16 @@
         <script src="../../js/account/scripts.js"></script>
     </head>
     <body>
-        <form id="register_form" action="register.php" onsubmit="return validateForm()" method="POST">
+        <form id="register_form" action="../../php/register.php" onsubmit="return validateForm()" method="POST">
             <h1>Create account</h1>
             <label for="name" class="">Your name</label>
-            <input type="text" id="name">
+            <input type="text" id="name" name="name">
             <h6 id="nameErrorHtml"></h6><br>
             <label for="email" class="">Email</label>
-            <input type="text" id="email">
+            <input type="text" id="email" name="email">
             <h6 id="emailErrorHtml"></h6><br>
             <label for="password" class="">Password</label>
-            <input type="password" placeholder="At least 7 characters" id="password">
+            <input type="password" placeholder="At least 7 characters" name="password" id="password">
             <h6 id="passwordErrorHtml"></h6><br>
             
             <input type="submit" id="registerSubmit" value="Create account">
