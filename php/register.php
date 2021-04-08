@@ -22,6 +22,13 @@
 ?>
 <html>
 <body>
-    <h2>Account Successfully created</h2>
+    <div style="margin-left: 455px;
+    margin-right: 455px;
+    margin-top: 50px; 
+    border:lightgrey .5px solid; background-color:#ffc04c">
+        <h2 style="text-align: center;">Account Successfully created</h2>
+        <br>
+        <a href="../html/account/signIn.html"><h2 style="text-align:center;">Sign in</h2>
+    </div>
     </body>
 </html>

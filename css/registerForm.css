@@ -1,0 +1,37 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    border: lightgrey .5px solid;
+    border-radius: 10px;
+    padding: 25px;
+    padding-top: 0px;
+}
+div {
+    margin-left: 455px;
+    margin-right: 455px;
+    margin-top: 50px;
+}
+span {
+    font-size: small;
+    font-weight: bold;
+}
+input {
+    padding-top: 5px;
+    width: 300px;
+    margin-top: 2px;
+}
+#nameErrorHtml, #passwordErrorHtml, #emailErrorHtml {
+    color: red;
+}
+div.formDiv {
+    margin:0;
+    padding:0;
+    margin-bottom: 15px; margin-top: 15px;
+}
+#registerSubmit {
+    background-color: orange;
+    width: 100%;
+    border-color:#BF7D00;
+}
