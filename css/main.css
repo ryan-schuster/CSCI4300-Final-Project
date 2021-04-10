@@ -33,7 +33,7 @@ a {
     right: 0;
 }
 
-#cbr1 {
+#nav-spacer-white {
     height: 10px;
 }
 
@@ -77,12 +77,12 @@ a {
 
 #nav-bar ul ul li {
     float: none;
-    margin: 3px 0 0 0;
     padding: 0 15px;
     border: 1px solid #BF7D00;
     border-radius: 5px;
     background-color: white;
     color: #FFA600;
+    visibility: visible;
 }
 
 #nav-bar ul li:hover > ul {
@@ -92,6 +92,18 @@ a {
 /* This keeps the sub lists displaying */
 #nav-bar ul ul li:hover, ul ul li {
     display: block;
+}
+
+.border {
     border: 3px solid #BF7D00;
-    margin: 0 0 0 0;
+    border-radius: 9px;
+    margin-top: 2px;
+    visibility: hidden;
+}
+
+.border:hover {
+    border: 3px solid #BF7D00;
+    border-radius: 9px;
+    margin-top: 2px;
+    visibility: visible;
 }
