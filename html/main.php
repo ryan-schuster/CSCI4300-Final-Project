@@ -7,9 +7,7 @@
         $account = "Welcome, " . $_SESSION["username"];
         $link = "";
         $loggedIn = true;
-    } else {
-        session_destroy();
-    }
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +51,7 @@
                                 <li><a href="accountPage.php">Account Page</a></li>
                             </div>
                             <div class="border">
-                                <li><a href="logout.php">Logout</a></li>
+                                <li><a href="../php/logout.php">Logout</a></li>
                             </div>
                         </ul>
                     </li>

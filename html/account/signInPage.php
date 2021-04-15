@@ -4,7 +4,7 @@
     if (isset($_SESSION["error"])) {
         $guard = true;
     }
-    session_destroy();
+    unset($_SESSION["error"]);
 ?>
 
 
