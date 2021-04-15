@@ -8,7 +8,7 @@
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = $db->prepare("INSERT INTO users2 (name, email, userPassword) #change from users2 to users
+        $query = $db->prepare("INSERT INTO users (name, email, userPassword)
         VALUES (:name, :email, :password)");
         $query->bindParam(':name', $name);
         $query->bindParam(':email', $email);
@@ -28,7 +28,7 @@
     border:lightgrey .5px solid; background-color:#ffc04c">
         <h2 style="text-align: center;">Account Successfully created</h2>
         <br>
-        <a href="../html/account/signIn.html"><h2 style="text-align:center;">Sign in</h2>
+        <a href="../html/account/signIn.php"><h2 style="text-align:center;">Sign in</h2>
     </div>
     </body>
 </html>

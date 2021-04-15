@@ -11,7 +11,7 @@
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = $db->prepare("SELECT email, userPassword, userID, name FROM users2"); #change from users2 to users
+        $query = $db->prepare("SELECT email, userPassword, userID, name FROM users"); 
         $query->execute();
         $array = $query->fetchAll();
         foreach ($array as $row) {
@@ -26,8 +26,8 @@
                 $_SESSION["userID"] = $userID;
                 include '../html/account/signedIn.html';
             } else {
-                session_destroy();
-                include '../html/account/signIn.html'; //show that sign in do not match somehow
+                $_SESSION["error"] = "true";
+                header("Location:../html/account/signInPage.php"); 
             }
         } catch (PDOException $e) {
         $error_message = $e->getMessage();
