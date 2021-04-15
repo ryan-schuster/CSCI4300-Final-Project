@@ -7,6 +7,12 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
+            "name": "Open main.html (Mac)",
+            "file": "html/main.html"
+        },
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
             "name": "Open main.html",
             "file": "html\\main.html"
         }
