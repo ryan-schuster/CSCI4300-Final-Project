@@ -1,7 +1,7 @@
 <?php
     session_start();
     $account = "Sign in";
-    $link = "account/signInPage.php";
+    $link = "../account/signInPage.php";
     $loggedIn = false;
     if (isset($_SESSION["username"])) {
         $account = "Welcome, " . $_SESSION["username"];
@@ -14,7 +14,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <title>TBD</title>
     <!-- <link rel="shortcut icon" src="../img/qstion.webp">
     <meta charset="utf-8">
@@ -28,18 +28,18 @@
         <div id="nav-spacer-white"></div>
         <div id="nav-ul">
             <ul>
-                <li><a href="../html/main.php">Home</a></li>
-                <li><a href="tracker.php">Tracker</a></li>
+                <li><a href="../../html/main.php">Home</a></li>
+                <li><a href="../tracker.php">Tracker</a></li>
                 <li>The Specifics
                     <ul>
                         <div class="border">
-                            <li><a href="specifics/your-room.php">Your Room</a></li>
+                            <li><a href="your-room.php">Your Room</a></li>
                         </div>
                         <div class="border">
-                            <li><a href="specifics/your-house.php">Your House</a></li>
+                            <li><a href="your-house.php">Your House</a></li>
                         </div>
                         <div class="border">
-                            <li><a href="specifics/your-life.php">Your Life</a></li>
+                            <li><a href="your-life.php">Your Life</a></li>
                         </div>
                     </ul>
                 </li>
@@ -48,10 +48,10 @@
                     <li><a href="<?php echo $link;?>"><?php echo $account;?></a>
                         <ul>
                             <div class="border">
-                                <li><a href="accountPage.php">Account Page</a></li>
+                                <li><a href="../accountPage.php">Account Page</a></li>
                             </div>
                             <div class="border">
-                                <li><a href="../php/logout.php">Logout</a></li>
+                                <li><a href="../../php/logout.php">Logout</a></li>
                             </div>
                         </ul>
                     </li>
