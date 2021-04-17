@@ -24,10 +24,13 @@
 
 <body>
 
+    <!-- Nav Bar import -->
     <?php   
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/nav-bar.php";
         include $IPATH;
     ?>
+
+    
 
 </body>
 
