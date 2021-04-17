@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "name": "main",
             "request": "launch",
-            "name": "Open main.html",
-            "file": "html\\main.html"
+            "type": "pwa-chrome",
+            "url": "http:\\localhost\\CSCI4300-Final-Project\\html\\main.php",
         }
     ]
 }

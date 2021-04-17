@@ -14,7 +14,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../../css/main.css">
+    <!-- <link rel="stylesheet" href=""> -->
     <title>TBD</title>
     <!-- <link rel="shortcut icon" src="../img/qstion.webp">
     <meta charset="utf-8">
@@ -23,44 +23,10 @@
 </head>
 
 <body>
-
-    <div id="nav-bar">
-        <div id="nav-spacer-white"></div>
-        <div id="nav-ul">
-            <ul>
-                <li><a href="../../html/main.php">Home</a></li>
-                <li><a href="../tracker.php">Tracker</a></li>
-                <li>The Specifics
-                    <ul>
-                        <div class="border">
-                            <li><a href="your-room.php">Your Room</a></li>
-                        </div>
-                        <div class="border">
-                            <li><a href="your-house.php">Your House</a></li>
-                        </div>
-                        <div class="border">
-                            <li><a href="your-life.php">Your Life</a></li>
-                        </div>
-                    </ul>
-                </li>
-                
-                <?php if ($loggedIn) : ?>
-                    <li><a href="<?php echo $link;?>"><?php echo $account;?></a>
-                        <ul>
-                            <div class="border">
-                                <li><a href="../accountPage.php">Account Page</a></li>
-                            </div>
-                            <div class="border">
-                                <li><a href="../../php/logout.php">Logout</a></li>
-                            </div>
-                        </ul>
-                    </li>
-                <?php else : ?>
-                    <li><a href="<?php echo $link;?>"><?php echo $account;?></a></li>
-                <?php endif; ?>
-            </ul>
-        </div>
-    </div>
+    <?php 
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/nav-bar.php";
+    include $IPATH;
+    ?>
 
 </body>
 
