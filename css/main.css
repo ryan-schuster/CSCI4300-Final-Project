@@ -5,6 +5,8 @@ Color Scheme:
 The two main colors -- they cannot touch anywhere, or be in close proximity without a transition color
 (main) Orange: #FFA600
 (complement) blue: #006FFF
+(Clash Compliment) Purple: #801FCC
+(Clash Compliment) Neon Orange: #ff4f00
 
 The two secondary colors, or transition colors. 
 (transitional) blueish: #004DB3
@@ -24,4 +26,108 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+#flex-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#could-be-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#could-be-cont h1 {
+    font-size: 5em;
+    color: #801FCC;
+}
+
+#could-be-cont h3 {
+    color: #BF7D00;
+    margin-top: -20px;
+}
+
+#details {
+    display: flex;
+    flex-direction: row;
+}
+
+.some-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.neon-divide {
+    height: 200px;
+    border-right: 1px solid #ff4f00;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 94px;
+}
+
+#the-math {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#math-svg {
+    background-image: url("../svg/orange-trap-neon.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 350px 40px;
+    width: 350px;
+    height: 40px;
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#the-tracker {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#diamond-svg {
+    background-image: url("../svg/orange-neon-diamond.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 200px 70px;
+    width: 200px;
+    height: 70px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#the-fax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fax-svg {
+    background-image: url("../svg/orange-trap-reverse-neon.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 350px 40px;
+    width: 350px;
+    height: 40px;
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
