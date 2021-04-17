@@ -14,8 +14,10 @@
 #percent-better-cont span {
     border-top: 1px solid silver;
     width: 20%;
-    margin-top: -3%;
+    margin-top: -30px;
 }
+
+/* ----- */
 
 #tracker-boxes-cont {
     display: flex;
@@ -31,6 +33,7 @@
     border: 1px solid #006FFF;
     border-radius: 25px;
     padding: 0 20px 20px 20px;
+    min-width: 350px;
 }
 
 #new-achievements-cont h2 {
@@ -43,20 +46,28 @@
     height: 0px;
 }
 
-#achieve {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #FFA600;
+.plus {
+    color: #006FFF;
 }
 
-.circle {
-    border: 2px solid inherit;
+.achieve {
+    background-image: url("../svg/orange-trap.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 350px 40px;
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.achieve .circle {
+    border: 3px solid #BF7D00;
     border-radius: 100%;
-    max-width: 10%;
-    max-height: 10%;
-    min-width: 10px;
-    min-height: 10px;
+    height: 15px;
+    width: 15px;
 }
 
 .complete-bar {
@@ -64,19 +75,36 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
+    margin-top: 10px;
 }
 
 .complete-bar span {
     border-top: 1px solid silver;
-    width: auto;
     height: 0px;
+    width: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-#achieved {
+.achieved {
+    background-image: url("../svg/blue-dim-trap.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 350px 40px;
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #004DB3;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.achieved .circle {
+    border: 3px solid #006FFF;
+    background-color: #006FFF;
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
 }
 
 /* ---- */
@@ -88,9 +116,25 @@
     border: 1px solid #006FFF;
     border-radius: 25px;
     padding: 0 20px 20px 20px;
+    min-width: 350px;
 }
 
 #excellent-habits-cont h2 {
     font-size: 2em;
+}
+
+/* ----- */
+
+#test-svg-cont {
+    width: 100%;
+    height: 200px;
+    margin-top: 50px;
+}
+
+#svg {
+    background-image: url("../svg/orange-trap.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 200px;
 }
 
