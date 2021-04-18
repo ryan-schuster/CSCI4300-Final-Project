@@ -49,13 +49,18 @@ a {
 }
 
 #could-be-cont h3 {
-    color: #BF7D00;
+    color: #ff4f00;
     margin-top: -20px;
 }
 
 #details {
     display: flex;
     flex-direction: row;
+}
+
+#details p {
+    width: 350px;
+    text-align: center;
 }
 
 .some-padding {
@@ -103,13 +108,22 @@ a {
     background-image: url("../svg/orange-neon-diamond.svg");
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: 200px 70px;
-    width: 200px;
-    height: 70px;
+    background-size: 220px 80px;
+    width: 220px;
+    height: 80px;
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#diamond-svg h2 {
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+
+#diamond-svg a:hover {
+    color: white;
 }
 
 #the-fax {

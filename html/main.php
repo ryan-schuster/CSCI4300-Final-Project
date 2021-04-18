@@ -51,7 +51,7 @@
 
             <div class ="some-padding" id="the-tracker">
                 <div id="diamond-svg">
-                    <h2>The Tracker</h2>
+                    <h2><a href="tracker.php">The Tracker</a></h2>
                 </div>
                 <p>Pellentesque tincidunt lacus a ultricies feugiat. Aenean eleifend, ante vel semper bibendum, urna elit cursus orci, sit amet pellentesque arcu felis nec odio. Duis ullamcorper tristique est vel semper. Integer sed massa a ligula vehicula tempus vel eget erat. In fermentum sit amet felis sed egestas. Nunc mauris nisi, dignissim id sodales at, consequat ut metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc porta gravida arcu, ultrices vestibulum metus porttitor in. Quisque sit amet mauris lorem. Nulla id rhoncus diam. Aenean eget pharetra diam. Ut sodales ipsum vitae tellus semper, ut ultrices neque posuere.</p>
             </div>
