@@ -1,0 +1,46 @@
+/*!40000 DROP DATABASE IF EXISTS `bettereveryday`*/;
+CREATE DATABASE IF NOT EXISTS `bettereveryday` DEFAULT CHARACTER SET utf8mb4;
+
+USE `bettereveryday`;
+
+-- Table structure for table `users`
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE users
+(
+	userID INT(6) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+    	userPassword VARCHAR(50) NOT NULL,
+	score VARCHAR(50) DEFAULT "0.00%!"	
+);
+
+-- Table structure for table `goals`
+DROP TABLE IF EXISTS `goals`;
+CREATE TABLE goals
+(
+	goalID INT(6) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	goalName VARCHAR(50) NOT NULL,
+	daily BIT
+);
+
+-- Table structure for table `personalGoalslist`
+DROP TABLE IF EXISTS `personalGoalslist`;
+CREATE TABLE personalGoalslist (
+	userID INT(6) UNSIGNED NOT NULL,
+	goalName VARCHAR(50) NOT NULL,
+	daily BIT DEFAULT 0,
+	completed BIT DEFAULT 0,
+	timeStamp INT(10) UNSIGNED
+);
+
+-- Table structure for table `goalslist`
+DROP TABLE IF EXISTS `goalslist`;
+CREATE TABLE goalslist
+(
+	userID INT(6) UNSIGNED NOT NULL,
+	goalID INT(6) UNSIGNED NOT NULL,
+	completed BIT DEFAULT 0,
+	timeStamp INT(10) UNSIGNED,
+	FOREIGN KEY(userID) REFERENCES users(userID),
+	FOREIGN KEY(goalID) REFERENCES goals(goalID)
+);
