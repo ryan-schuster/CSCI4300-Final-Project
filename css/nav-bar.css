@@ -2,9 +2,11 @@
 IMPORTANT
 
 Color Scheme:
-The two main colors -- they cannot touch anywhere, or be in close proximity without a transition color
-(main) Orange: #FFA600
-(complement) blue: #006FFF
+Color Scheme:
+The two main colors -- they cannot touch anywhere, or be in close proximity without a transition color (or whitespace)
+(main) Neon Orange: #ff4f00
+(complement) Purple: #801FCC
+(Clash Compliment) blue: #006FFF
 
 The two secondary colors, or transition colors. 
 (transitional) blueish: #004DB3
@@ -33,23 +35,13 @@ a {
     right: 0;
 }
 
-#nav-spacer-white {
-    height: 10px;
-}
-
 #nav-ul {
-    margin: 3px 20px 0 20px;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    /* background: radial-gradient(ellipse at right, #004DB3, transparent),
-            radial-gradient(ellipse at left, #004DB3, transparent); */
-    /* background: radial-gradient(white, #004DB3); */
-    /* background-color: #004DB3; */
+    background-color: #801FCC;
     font-weight: bolder;
-    color: #FFA600;
-    border: 3px solid #004DB3;
-    border-radius: 10px;
+    color: #ff4f00;
     box-shadow: 0 3px 5px gray;
 }
 
@@ -67,7 +59,7 @@ a {
 }
 
 #nav-bar ul li:hover {
-    color: #BF7D00;
+    color: white;
 }
 
 #nav-bar ul ul {
@@ -78,10 +70,10 @@ a {
 #nav-bar ul ul li {
     float: none;
     padding: 0 15px;
-    border: 1px solid #BF7D00;
+    border: 1px solid #ff4f00;
     border-radius: 5px;
-    background-color: white;
-    color: #FFA600;
+    background-color: #801FCC;
+    color: #ff4f00;
     visibility: visible;
 }
 
@@ -95,14 +87,14 @@ a {
 }
 
 .border {
-    border: 3px solid #BF7D00;
+    border: 3px solid #ff4f00;
     border-radius: 9px;
     margin-top: 2px;
     visibility: hidden;
 }
 
 .border:hover {
-    border: 3px solid #BF7D00;
+    border: 3px solid #ff4f00;
     border-radius: 9px;
     margin-top: 2px;
     visibility: visible;
