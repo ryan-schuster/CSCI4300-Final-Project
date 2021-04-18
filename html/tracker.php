@@ -3,11 +3,33 @@ session_start();
 $account = "Sign in";
 $link = "account/signInPage.php";
 $loggedIn = false;
+$percent = "0.00%!";
 if (isset($_SESSION["username"])) {
     $account = "Welcome, " . $_SESSION["username"];
+    $userID = $_SESSION["userID"];
     $link = "";
     $loggedIn = true;
+    $dsn = 'mysql:host=localhost;dbname=bettereveryday';
+    $dbUsername = 'root';
+    $dbPassword = '';
+    try {
+        $db = new PDO($dsn, $dbUsername, $dbPassword);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        $error_message = $e->getMessage();
+        echo "<p>An error occurred while connecting to the database: $error_message </p>";
+    }
+    $query = "SELECT * FROM users WHERE $userID=userID";
+    $userInfo = $db->query($query);
+    foreach ($userInfo as $score) {
+        $percent = $score['score'];
+    }
+
+
+
+
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +53,7 @@ if (isset($_SESSION["username"])) {
     ?>
 
     <div id="percent-better-cont">
-        <h1>69.96%!</h1>
+        <h1><?php echo $percent;?></h1>
         <span></span>
         <p id="better-txt"><em>Better Than Before</em></p>
     </div>
@@ -41,7 +63,7 @@ if (isset($_SESSION["username"])) {
         <div id="new-achievements-cont">
             <h2>New Achievments</h2>
             <span class="separator"></span>
-            <p class="plus">+</p>
+            <a href="account/achieveAdderPage.php"><p class="plus">+</p></a>
             <div class="achieve">
                 <div class="circle"></div>
                 <p>An incredible thing</p>
@@ -64,7 +86,7 @@ if (isset($_SESSION["username"])) {
         <div id="excellent-habits-cont">
             <h2>Excellent Habits</h2>
             <span class="separator"></span>
-            <p class="plus">+</p>
+            <a href="account/habitAdderPage.php"><p class="plus">+</p></a>
             <div class="achieve">
                 <div class="circle"></div>
                 <p>An incredible thing</p>

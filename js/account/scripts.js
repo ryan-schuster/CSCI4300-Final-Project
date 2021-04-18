@@ -27,6 +27,21 @@ function signInCheck() {
     }
 }
 
+function habitAdderCheck() {
+    var name = "";
+    var nameValid;
+    var nameError = "";
+    if (document.getElementById('goalName').value === "") {
+        nameValid = false;
+        nameError = "Invalid name";
+    } else {
+        nameValid = true;
+        nameError = "";
+    }
+    document.getElementById("goalNameErrorHtml").innerHTML=nameError;
+    return nameValid;
+}
+
 function validateForm() {
     var nameError = "";
     var emailError = "";
