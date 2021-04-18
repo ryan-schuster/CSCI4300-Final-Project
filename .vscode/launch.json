@@ -7,8 +7,15 @@
         {
             "type": "firefox",
             "request": "launch",
-            "reAttach": true,
-            "name": "Tracker.html",
+            "reAttach": false,
+            "name": "main-fire",
+            "url": "http:/localhost/CSCI4300-Final-Project/html/main.php"
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": false,
+            "name": "track-fire",
             "url": "http:/localhost/CSCI4300-Final-Project/html/tracker.php"
         },
         
