@@ -42,3 +42,28 @@ CREATE TABLE goalslist
 	FOREIGN KEY(userID) REFERENCES users(userID),
 	FOREIGN KEY(goalID) REFERENCES goals(goalID)
 );
+
+--Insert default goals into goals table
+INSERT INTO goals (goalName, daily)
+VALUES ('Alcohol free', 0);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Debt free', 0);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Graduate', 0);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Lose Weight', 0);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Exercise', 1);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Make bed', 1);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Meditate', 1);
+
+INSERT INTO goals (goalName, daily)
+VALUES ('Yoga', 1);
