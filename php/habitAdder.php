@@ -11,7 +11,6 @@
     } else {
         $daily = false;
     }
-    $timeStamp = time();
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,14 +24,17 @@
         }
             if ($guard) {
                 $_SESSION["error"] = "true";
-                header("Location:../html/account/habitAdderPage.php"); 
+                if ($_SESSION["habit"]) {
+                    header("Location:../html/account/habitAdderPage.php"); 
+                } else {
+                    header("Location:../html/account/achieveAdderPage.php");
+                }
             } else {
-                $query = $db->prepare("INSERT INTO personalGoalslist (userID, goalName, daily, timeStamp)
-                VALUES (:id, :name, :daily, :timeStamp)");
+                $query = $db->prepare("INSERT INTO personalGoalslist (userID, goalName, daily)
+                VALUES (:id, :name, :daily)");
                 $query->bindParam(':id', $_SESSION["userID"]);
                 $query->bindParam(':name', $goalName);
                 $query->bindParam(':daily', $daily);
-                $query->bindParam(':timeStamp', $timeStamp);
                 $query->execute();
                 header("Location:../html/tracker.php");
             }
