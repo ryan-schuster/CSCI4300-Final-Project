@@ -3,7 +3,7 @@ session_start();
 $account = "Sign in";
 $link = "account/signInPage.php";
 $loggedIn = false;
-$percent = "0.00%";
+$percent = "0.00";
 if (isset($_SESSION["username"])) {
     $account = "Welcome, " . $_SESSION["username"];
     $userID = $_SESSION["userID"];
@@ -93,10 +93,10 @@ if (isset($_SESSION["username"])) {
     ?>
 
     <div id="percent-better-cont">
-        <?php 
+        <?php/*  
             $modifiedPercent = substr($percent, 0, 6);
-        ?>
-        <h1 id="percent-better-h1"><?php echo $modifiedPercent / 100;?>%!</h1>
+        */?>
+        <h1 id="percent-better-h1"><?php echo $percent;?>%!</h1>
         <span></span>
         <p id="better-txt"><em>Better Than Before</em></p>
     </div>

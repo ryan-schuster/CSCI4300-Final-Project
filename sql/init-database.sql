@@ -11,7 +11,7 @@ CREATE TABLE users
 	name VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
     	userPassword VARCHAR(50) NOT NULL,
-	score VARCHAR(50) DEFAULT "0.00%!"	
+	score DOUBLE(3, 2) DEFAULT "0.00"	
 );
 
 -- Table structure for table `goals`
@@ -38,12 +38,12 @@ CREATE TABLE goalslist
 (
 	userID INT(6) UNSIGNED NOT NULL,
 	goalID INT(6) UNSIGNED NOT NULL,
-	completed BIT DEFAULT 0
+	completed BIT DEFAULT 0,
 	FOREIGN KEY(userID) REFERENCES users(userID),
 	FOREIGN KEY(goalID) REFERENCES goals(goalID)
 );
 
---Insert default goals into goals table
+-- Insert default goals into goals table
 INSERT INTO goals (goalName, daily)
 VALUES ('Alcohol free', 0);
 
