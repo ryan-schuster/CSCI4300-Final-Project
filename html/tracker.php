@@ -101,7 +101,14 @@ if (isset($_SESSION["username"])) {
         <p id="better-txt"><em>Better Than Before</em></p>
     </div>
 
+    <div id="flex-cont">
+        <div id="advance-the-day" class="clickable">
+            <h4>Finish the day!</h4>
+        </div>
+    </div>
+
     <div id="tracker-boxes-cont">
+
 
         <div id="new-achievements-cont">
             <h2>New Achievments</h2>
