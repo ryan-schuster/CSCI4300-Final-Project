@@ -119,7 +119,7 @@ if (isset($_SESSION["username"])) {
             foreach($queryAchieve as $a) {
                 ?>
                 <div class="achieve">
-                    <div class="circle"></div>
+                    <div class="circle clickable"></div>
                     <p><?php echo $a['goalName'];
                     $achGuard = false;?></p>
                 </div>
@@ -139,13 +139,13 @@ if (isset($_SESSION["username"])) {
                 <?php endif;}?>
             <?php if ($achGuard && $pGuard1) :?>
                 <div class="achieve">
-                    <div class="circle"></div>
+                    <div class="circle clickable"></div>
                     <p>No achievements</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
                 <div class="achieve">
-                    <div class="circle"></div>
+                    <div class="circle clickable"></div>
                     <p>Try logging in</p>
                 </div>
             <?php endif;?>
@@ -193,7 +193,7 @@ if (isset($_SESSION["username"])) {
             <?php if ($loggedIn) :?>
             <?php foreach($queryHabit as $a) {?>
                 <div class="achieve-habit">
-                    <div class="circle"></div>
+                    <div class="circle clickable"></div>
                     <p><?php echo $a['goalName'];
                     $habitGuard = false;?></p>
                 </div>
@@ -201,7 +201,7 @@ if (isset($_SESSION["username"])) {
             <?php foreach($personalGL3 as $p) {
                 if ($p['daily'] == 1 && $p['completed'] == 0) :?>
                     <div class="achieve-habit">
-                        <div class="circle"></div>
+                        <div class="circle clickable"></div>
                         <p><?php echo $p['goalName'];
                         $pGuard3 = false;?></p>
                     </div>
@@ -209,13 +209,13 @@ if (isset($_SESSION["username"])) {
 
                 <?php if ($habitGuard && $pGuard3) :?>
                 <div class="achieve-habit">
-                    <div class="circle"></div>
+                    <div class="circle clickable"></div>
                     <p>No habits</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
                 <div class="achieve-habit">
-                    <div class="circle"></div>
+                    <div class="circle clickable"></div>
                     <p>Try logging in</p>
                 </div>
             <?php endif;?>
