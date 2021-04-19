@@ -192,7 +192,7 @@ if (isset($_SESSION["username"])) {
             <a href="account/habitAdderPage.php"><p class="plus">+</p></a>
             <?php if ($loggedIn) :?>
             <?php foreach($queryHabit as $a) {?>
-                <div class="achieve">
+                <div class="achieve-habit">
                     <div class="circle"></div>
                     <p><?php echo $a['goalName'];
                     $habitGuard = false;?></p>
@@ -200,7 +200,7 @@ if (isset($_SESSION["username"])) {
             <?php }?>
             <?php foreach($personalGL3 as $p) {
                 if ($p['daily'] == 1 && $p['completed'] == 0) :?>
-                    <div class="achieve">
+                    <div class="achieve-habit">
                         <div class="circle"></div>
                         <p><?php echo $p['goalName'];
                         $pGuard3 = false;?></p>
@@ -208,13 +208,13 @@ if (isset($_SESSION["username"])) {
                 <?php endif;}?>
 
                 <?php if ($habitGuard && $pGuard3) :?>
-                <div class="achieve">
+                <div class="achieve-habit">
                     <div class="circle"></div>
                     <p>No habits</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
-                <div class="achieve">
+                <div class="achieve-habit">
                     <div class="circle"></div>
                     <p>Try logging in</p>
                 </div>
@@ -227,7 +227,7 @@ if (isset($_SESSION["username"])) {
             </div>
             <?php if ($loggedIn) :?>
             <?php foreach($queryHabitComp as $a) {?>
-                <div class="achieved">
+                <div class="achieved-habit">
                     <div class="circle"></div>
                     <p><?php echo $a['goalName'];
                     $habitCompGuard = false;?></p>
@@ -235,20 +235,20 @@ if (isset($_SESSION["username"])) {
             <?php }?>
             <?php foreach($personalGL4 as $p) {
                 if ($p['daily'] == 1 && $p['completed'] == 1) :?>
-                    <div class="achieved">
+                    <div class="achieved-habit">
                         <div class="circle"></div>
                         <p><?php echo $p['goalName'];
                         $pGuard4 = false;?></p>
                     </div>
                 <?php endif;}?>
             <?php if ($habitCompGuard && $pGuard4) :?>
-                <div class="achieved">
+                <div class="achieved-habit">
                     <div class="circle"></div>
                     <p>Try completing a goal</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
-                <div class="achieved">
+                <div class="achieved-habit">
                     <div class="circle"></div>
                     <p>Try logging in</p>
                 </div>
