@@ -1,10 +1,12 @@
+// Check off achievement or habit
 $(".circle").click(function() {
     $(this).toggleClass("clicked");
+    var itemName = $.trim($(this).siblings()[0].childNodes[0].data);
     $.post( 
         '../php/completeAdder.php', // location of your php script
-        {goalName: "Make bed" }, // any data you want to send to the script
+        {goalName: itemName }, // any data you want to send to the script
         function( data ){  // a function to deal with the returned information
             // Reload the page
-            // Later we can just use this section to move it to the checked off section
+            location.reload();
         });
 });

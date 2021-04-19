@@ -4,12 +4,12 @@
     $dbPassword = '';
     $guard = false;
     if (isset($_POST['goalID'])) { //goal from goallist
-        $guard = true;
+        $guard = false;
         $goalID=($_POST['goalID']);
     } 
     if (isset($_POST['goalName'])) { //personal goal from personal goal list
-        $guard = false;
-        $goalName=($_POST['goalName']);
+        $guard = true;
+        $goalName=(trim($_POST['goalName']));
     }
     session_start();
     $userID = $_SESSION["userID"];
@@ -17,12 +17,13 @@
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             if ($guard) {
-                $query = $db->prepare("UPDATE goalslist SET 
-                completed = 1 WHERE $goalName=goalName AND $userID=userID");
+                $query = $db->prepare("UPDATE personalGoalslist SET 
+                completed = 1 WHERE goalName='$goalName' AND userID=$userID");
+                print_r($query);
                 $query->execute();
             } else {
-                $query = $db->prepare("UPDATE personalGoalslist SET 
-                completed = 1 WHERE $goalID=goalID AND $userID=userID");
+                $query = $db->prepare("UPDATE goalsList SET 
+                completed = 1 WHERE goalId=$goalID AND userID=$userID");
                 $query->execute();
             }
             header("Location:../html/tracker.php");
