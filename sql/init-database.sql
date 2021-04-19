@@ -29,8 +29,7 @@ CREATE TABLE personalGoalslist (
 	userID INT(6) UNSIGNED NOT NULL,
 	goalName VARCHAR(50) NOT NULL,
 	daily BIT DEFAULT 0,
-	completed BIT DEFAULT 0,
-	timeStamp INT(10) UNSIGNED
+	completed BIT DEFAULT 0
 );
 
 -- Table structure for table `goalslist`
@@ -39,8 +38,7 @@ CREATE TABLE goalslist
 (
 	userID INT(6) UNSIGNED NOT NULL,
 	goalID INT(6) UNSIGNED NOT NULL,
-	completed BIT DEFAULT 0,
-	timeStamp INT(10) UNSIGNED,
+	completed BIT DEFAULT 0
 	FOREIGN KEY(userID) REFERENCES users(userID),
 	FOREIGN KEY(goalID) REFERENCES goals(goalID)
 );
