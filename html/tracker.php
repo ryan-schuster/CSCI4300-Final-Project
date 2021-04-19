@@ -105,20 +105,27 @@ if (isset($_SESSION["username"])) {
             <span class="separator"></span>
             <a href="account/achieveAdderPage.php"><p class="plus">+</p></a>
             <?php if ($loggedIn) :?>
-            <?php foreach($queryAchieve as $a) {?>
+            <?php 
+            foreach($queryAchieve as $a) {
+                ?>
                 <div class="achieve">
                     <div class="circle"></div>
                     <p><?php echo $a['goalName'];
                     $achGuard = false;?></p>
                 </div>
             <?php }?>
-            <?php foreach($personalGL1 as $p) {
+            <?php 
+            $id_js_tracker = 0;
+            foreach($personalGL1 as $p) { // Render loop
                 if ($p['daily'] == 0 && $p['completed'] == 0) :?>
+
                     <div class="achieve">
-                        <div class="circle"></div>
-                        <p><?php echo $p['goalName'];
+                        <div class="circle clickable"></div>
+                        <p <?php echo'id="a-' .$id_js_tracker. '"'; ?> >
+                            <?php echo $p['goalName'];
                         $pGuard1 = false;?></p>
                     </div>
+                    <?php $id_js_tracker++; // Assigning unique ids for javascript access?> 
                 <?php endif;}?>
             <?php if ($achGuard && $pGuard1) :?>
                 <div class="achieve">
@@ -241,10 +248,9 @@ if (isset($_SESSION["username"])) {
 
     </div>
 
-    <div id="test-svg-cont">
-        <div id="svg"></div>
-    </div>
-
 </body>
+
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../js/tracker.js"></script>
 
 </html>

@@ -18,11 +18,11 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             if ($guard) {
                 $query = $db->prepare("UPDATE goalslist SET 
-                completed = 1 WHERE $goalName=goalName AND $userID=userID";
+                completed = 1 WHERE $goalName=goalName AND $userID=userID");
                 $query->execute();
             } else {
                 $query = $db->prepare("UPDATE personalGoalslist SET 
-                completed = 1 WHERE $goalID=goalID AND $userID=userID";
+                completed = 1 WHERE $goalID=goalID AND $userID=userID");
                 $query->execute();
             }
             header("Location:../html/tracker.php");
