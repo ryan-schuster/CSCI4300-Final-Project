@@ -10,3 +10,14 @@ $(".circle").click(function() {
             location.reload();
         });
 });
+
+// Advances the day
+$("#advance-the-day").click(function() {
+    $.post( 
+        '../php/newDayReset.php', // location of your php script
+        {}, // any data you want to send to the script
+        function( data ){  // a function to deal with the returned information
+            // Reload the page
+            location.reload();
+        });
+});
