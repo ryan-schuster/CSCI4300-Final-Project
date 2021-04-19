@@ -3,6 +3,7 @@ function signInCheck() {
     var passwordError = "";
     var emailValid;
     var passwordValid;
+    const reg2 = /^[a-zA-Z0-9]{7,}$/
     const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; //regular expression to check valid emails
     if (reg.test(document.getElementById('email').value)) {
         emailValid = true;
@@ -11,16 +12,16 @@ function signInCheck() {
         emailValid = false;
         emailError = "Invalid email";
     }
-    if (document.getElementById('password').value < 7) {
-        passwordError = "Invalid password";
-        passwordValid = false;
-    } else {
+    if (reg2.test(document.getElementById('password').value)) {
         passwordValid = true;
         passwordError = "";
+    } else {
+        passwordError = "Invalid password";
+        passwordValid = false;
     }
     document.getElementById("emailErrorHtmlSignIn").innerHTML=emailError;
     document.getElementById("passwordErrorHtmlSignIn").innerHTML=passwordError;
-    if (passwordValid && emailValid && nameValid) {
+    if (passwordValid && emailValid) {
         return true;
     } else {
         return false;
@@ -49,6 +50,7 @@ function validateForm() {
     var nameValid;
     var emailValid;
     var passwordValid;
+    const reg2 = /^[a-zA-Z0-9]{7,}$/
     const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; //regular expression to check valid emails
     if (document.getElementById('name').value === "") {
         nameValid = false;
@@ -64,12 +66,12 @@ function validateForm() {
         emailValid = false;
         emailError = "Invalid email";
     }
-    if (document.getElementById('password').value < 7) {
-        passwordError = "Invalid password";
-        passwordValid = false;
-    } else {
+    if (reg2.test(document.getElementById('password').value)) {
         passwordValid = true;
         passwordError = "";
+    } else {
+        passwordError = "Invalid password";
+        passwordValid = false;
     }
     document.getElementById("nameErrorHtml").innerHTML=nameError; //writes to html code
     document.getElementById("emailErrorHtml").innerHTML=emailError;

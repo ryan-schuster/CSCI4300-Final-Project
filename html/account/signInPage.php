@@ -24,7 +24,7 @@
             <div class="formDiv">
                 <label for="email" class=""><span>Email</span></label><br>
                 <input type="text" id="email" name="email">
-                <span id="emailErrorHtmlSignIn"><?php if($guard) {?>
+                <span id="emailErrorHtmlSignIn" style="color:red"><?php if($guard) {?>
                     <?php echo "Incorrect email and password combo";?>
                 <?php } ?></span>
                 
@@ -32,11 +32,15 @@
             <div class="formDiv">
                 <label for="password" class=""><span>Password</span></label><br>
                 <input type="password" placeholder="At least 7 characters" name="password" id="password">
-                <span id="passwordErrorHtmlSignIn"><?php if($guard) {
+                <span id="passwordErrorHtmlSignIn" style="color:red; padding-bottom: 1em"><?php if($guard) {
                     echo "Incorrect email and password combo";
                 }?></span>
             </div>
-            <input type="submit" id="signInSubmit" value="Sign in">
+            <br>
+            <input type="submit" id="signInSubmit" value="Sign in" style="background-color: orange;
+                width: 100%;
+                border-color:#BF7D00">
+            <p></p>
             <a href="registration.html">No Account? Create one.</a>
             
         </form>

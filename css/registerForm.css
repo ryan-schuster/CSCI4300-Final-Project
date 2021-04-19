@@ -22,7 +22,7 @@ input {
     width: 300px;
     margin-top: 2px;
 }
-#nameErrorHtml, #passwordErrorHtml, #emailErrorHtml {
+#nameErrorHtml, #passwordErrorHtml, #emailErrorHtml, #passwordErrorHtmlSignIn, #emailErrorHtmlSignIn {
     color: red;
 }
 div.formDiv {
@@ -30,7 +30,7 @@ div.formDiv {
     padding:0;
     margin-bottom: 15px; margin-top: 15px;
 }
-#registerSubmit {
+#registerSubmit, #signInSubmit {
     background-color: orange;
     width: 100%;
     border-color:#BF7D00;
