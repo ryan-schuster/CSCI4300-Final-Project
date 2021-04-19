@@ -123,18 +123,42 @@
     font-size: 2em;
 }
 
-/* ----- */
-
-#test-svg-cont {
-    width: 100%;
-    height: 200px;
-    margin-top: 50px;
+#flex-cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-#svg {
-    background-image: url("../svg/orange-trap.svg");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 200px;
+#advance-the-day {
+    display: flex;
+    justify-content: center;
+
+    background-image: url("../svg/green-advance-day.svg");
+    background-size: 400px 50px;
+    width: 400px;
+    height: 50px;
+
+    transition: all 0.5s;
 }
 
+#advance-the-day h4 {
+    position: relative;
+    margin-top: 7px;
+    font-size: 1.5em;
+}
+
+#advance-the-day:hover {
+    transform: translate(20px, 0);
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* ----- ALL JS CLASSES ----- */
+
+.clickable {
+    cursor: pointer;
+}
+
+.clicked {
+    background-color: blue;
+}
