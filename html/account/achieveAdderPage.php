@@ -46,7 +46,7 @@
         <input type="submit" id="habitSelectorSubmit" value="Add goal">
         </form>
 
-        <form id="achieve_form" action="../../php/habitAdder.php" onsubmit="return habitAdderCheck()" method="POST">
+        <form id="achieve_form" action="../../php/goalAdder.php" onsubmit="return habitAdderCheck()" method="POST">
             <h1>Add an Achievement</h1>
             <div class="formDiv">
 
