@@ -11,7 +11,7 @@ CREATE TABLE users
 	name VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
     	userPassword VARCHAR(50) NOT NULL,
-	score DOUBLE(3, 2) DEFAULT "0.00"	
+	score DOUBLE(3, 2) DEFAULT 1.00	
 );
 
 -- Table structure for table `goals`
