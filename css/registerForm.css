@@ -1,18 +1,21 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #E8E8E8; 
+}
+
+#align-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 form {
-    border: lightgrey .5px solid;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 25px;
     padding: 25px;
     padding-top: 0px;
 }
-div {
-    margin-left: 455px;
-    margin-right: 455px;
-    margin-top: 50px;
-}
+
 span {
     font-size: small;
     font-weight: bold;
@@ -23,7 +26,7 @@ input {
     margin-top: 2px;
 }
 #nameErrorHtml, #passwordErrorHtml, #emailErrorHtml, #passwordErrorHtmlSignIn, #emailErrorHtmlSignIn {
-    color: red;
+    color: #801FCC;
 }
 div.formDiv {
     margin:0;
@@ -31,7 +34,15 @@ div.formDiv {
     margin-bottom: 15px; margin-top: 15px;
 }
 #registerSubmit, #signInSubmit {
-    background-color: orange;
+    background-color: #ff4f00;
     width: 100%;
-    border-color:#BF7D00;
+    border-color:#ff4f00;
+}
+
+a {
+    color: #801FCC;
+}
+
+a:hover {
+    color: #ff4f00;
 }
