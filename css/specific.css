@@ -1,6 +1,7 @@
 #centering-div {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #cont-1 {
@@ -40,4 +41,94 @@
     background-color: white;
     justify-content: space-between;
     align-items: center;
+}
+
+/* ------ */
+
+#example-cont-overall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#separator-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#separator-contt span {
+    border-top: 1px solid #801FCC;
+    height: 0px;
+    width: 35vw;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#separator-cont h2 {
+    color: #ff4f00;
+}
+
+#the-suggestions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#suggestions-achievements {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 7%;
+    justify-content: center;
+    width: 55vw;
+    margin-top: -10px;
+}
+
+.achieve {
+    background-image: url("../svg/orange-trap-neon.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 300px 35px;
+    width: 300px;
+    height: 35px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+#suggestion-divider {
+    height: 30vh;
+    border-right: 1px solid #801FCC;
+}
+
+#suggestions-habits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 7%;
+    justify-content: center;
+    width: 55vw;
+    margin-top: -10px;
+}
+
+.achieved {
+    background-image: url("../svg/orange-trap-reverse-neon.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 300px 35px;
+    width: 300px;
+    height: 35px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+#space-footer {
+    height: 50px;
 }

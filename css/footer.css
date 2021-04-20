@@ -5,6 +5,8 @@
   align-items: center;
 
   height: 50px;
-  background-color: #5a158e;
-  color: white;
+  /* border-top: 1px solid #801FCC; */
+  background-color: #801FCC;
+  /* color: #801FCC; */
+  color:white;
 }

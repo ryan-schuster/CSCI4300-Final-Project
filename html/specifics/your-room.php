@@ -1,13 +1,30 @@
 <?php
-    session_start();
-    $account = "Sign in";
-    $link = "../account/signInPage.php";
-    $loggedIn = false;
-    if (isset($_SESSION["username"])) {
-        $account = "Welcome, " . $_SESSION["username"];
-        $link = "";
-        $loggedIn = true;
-    } 
+session_start();
+$account = "Sign in";
+$link = "../account/signInPage.php";
+$loggedIn = false;
+if (isset($_SESSION["username"])) {
+    $account = "Welcome, " . $_SESSION["username"];
+    $link = "";
+    $loggedIn = true;
+}
+
+$dsn = 'mysql:host=localhost;dbname=bettereveryday';
+$dbUsername = 'root';
+$dbPassword = '';
+try {
+    $db = new PDO($dsn, $dbUsername, $dbPassword);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    $error_message = $e->getMessage();
+    echo "<p>An error occurred while connecting to the database: $error_message </p>";
+}
+
+$achGoalGuard = false;
+$query = "SELECT * FROM goals";
+$queryGoalsList = $db->prepare($query);
+$queryGoalsList->execute();
+$achGoalGuard = true;
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +42,13 @@
 
 <body>
 
-    <?php   
-        $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/nav-bar.php";
-        include $IPATH;
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/nav-bar.php";
+    include $IPATH;
     ?>
 
-<div id="centering-div">
+    <div id="centering-div">
+
         <div id="cont-1">
 
             <div id="title-cont">
@@ -48,11 +66,52 @@
             </div>
 
         </div>
+
+        <div id="example-cont-overall">
+            <div id="separator-cont">
+                <span></span>
+                <h2>Suggestions</h2>
+                <span></span>
+            </div>
+            <div id="the-suggestions">
+                <div id="suggestions-achievements">
+                    <?php
+                    $count = 4;
+                    foreach ($queryGoalsList as $a) {
+                        if ($count == 0) break;
+                        $count--;
+                    ?>
+                        <div class="achieve" id=<?php echo $a['goalID']; ?>>
+                            <p><?php echo $a['goalName'];
+                                $achGoalGuard = false; ?>
+                            </p>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div id="suggestion-divider"></div>
+                <div id="suggestions-habits">
+                <?php 
+                    $count = 4;
+                    foreach($queryGoalsList as $a) {
+                        if($count == 0) break;
+                        $count--;
+                ?>
+                        <div class="achieved" id=<?php echo $a['goalID'];?>>
+                                <p><?php echo $a['goalName'];
+                                    $achGoalGuard = false;?>
+                                </p>
+                        </div>
+                <?php }?>
+                </div>
+            </div>
+            <div id="space-footer"></div>
+        </div>
+
     </div>
 
-<?php 
-        $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
-        include $IPATH;
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
+    include $IPATH;
     ?>
 
 </body>

@@ -55,6 +55,7 @@ a {
 #details {
     display: flex;
     flex-direction: row;
+    padding-bottom: 50px;
 }
 
 #details p {

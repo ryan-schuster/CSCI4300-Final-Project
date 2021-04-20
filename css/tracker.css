@@ -22,19 +22,16 @@ p {
 #percent-better-cont span {
     border-top: 1px solid silver;
     width: 20%;
-    margin-top: -30px;
 }
 
 #flex-cont {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
 }
 
 #advance-the-day {
     display: flex;
     justify-content: center;
-
     transition: all 0.5s;
 }
 
