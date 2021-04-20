@@ -88,7 +88,6 @@ $achGoalGuard = true;
                         </div>
                     <?php } ?>
                 </div>
-                <div id="suggestion-divider"></div>
                 <div id="suggestions-habits">
                 <?php 
                     $count = 4;
