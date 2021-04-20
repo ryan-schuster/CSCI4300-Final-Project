@@ -24,7 +24,7 @@
             if ($guard) {
                 $_SESSION["username"] = $userFullName;
                 $_SESSION["userID"] = $userID;
-                include '../html/account/signedIn.html';
+                include $_SERVER["DOCUMENT_ROOT"] . '/CSCI4300-Final-Project/html/main.php';
             } else {
                 $_SESSION["error"] = "true";
                 header("Location:../html/account/signInPage.php"); 
