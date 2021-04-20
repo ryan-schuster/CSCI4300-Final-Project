@@ -32,7 +32,7 @@
         <meta charset="UTF-8">
         <title>habit adder</title>
         <script src="../../js/account/scripts.js"></script>
-        <link href="../../css/registerForm.css" rel="stylesheet">
+        <link rel="stylesheet" href="/CSCI4300-Final-Project/css/account/habitAdderPage.css">
     </head>
     <body>
         <div>
@@ -63,4 +63,6 @@
         </form>
         </div>
     </body>
+
+    <script src="/CSCI4300-Final-Project/js/account/script.js"></script>
 </html>
