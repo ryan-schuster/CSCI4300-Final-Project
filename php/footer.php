@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/CSCI4300-Final-Project/css/footer.css">
+
 <footer>
   
   <span class="support_links"><a href="#"> support_link_a </a></span>

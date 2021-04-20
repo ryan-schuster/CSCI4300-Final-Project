@@ -29,6 +29,11 @@
         include $IPATH;
     ?>
 
+<?php 
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
+        include $IPATH;
+    ?>
+
 </body>
 
 </html>
