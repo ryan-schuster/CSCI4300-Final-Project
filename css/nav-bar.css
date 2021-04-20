@@ -61,7 +61,7 @@ a {
 }
 
 #nav-bar ul li:hover {
-    color: white;
+    color: #ff4f00;
 }
 
 #nav-bar ul ul {
@@ -78,17 +78,19 @@ a {
 
 #nav-bar ul li:hover > ul {
     display: block;
+    color:white;
 }
 /* Add hover to reveal an additional div with larger border*/
 /* This keeps the sub lists displaying */
 #nav-bar ul ul li:hover, ul ul li {
     display: block;
+    color:white;
 }
 
 .border {
     margin-top: 5px;
     background-image: url("../svg/orange-trap-neon-reverse-tall.svg");
-    background-position: 50% 50%;
+    background-position: 50% 25%;
     background-repeat: no-repeat;
     background-size: 120px 25px;
 }
@@ -97,9 +99,36 @@ a {
     background-image: none;
     margin-top: 5px;
     background-image: url("../svg/orange-trap-neon-tall.svg");
-    background-position: 50% 50%;
+    background-position: 50% 25%;
     background-repeat: no-repeat;
     background-size: 120px 25px;
     transform: translate(5px, 0);
     transition: all 0.5s ease-in-out;
+}
+
+.border-long {
+    padding-left: 10px;
+    margin-top: 5px;
+    background-image: url("../svg/orange-trap-neon-longtall-reverse.svg");
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-size: 145px 30px;
+    width: 145px;
+}
+
+.border-long:hover {
+    padding-left: 10px;
+    background-image: none;
+    margin-top: 5px;
+    background-image: url("../svg/orange-trap-neon-longtall.svg");
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-size: 145px 30px;
+    width: 145px;
+    transform: translate(5px, 0);
+    transition: all 0.5s ease-in-out;
+}
+
+#home {
+    color:#ff4f00; 
 }
