@@ -1,41 +1,58 @@
 body{
-	margin-left: 600px;
-	margin-right: 600px;
-	text-align: center;
+	background-color: #E8E8E8; ;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	border: 2px solid #004DB3;
 }
-div{
+
+#habit-cont-1 {
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
+}
+
+#habit-cont-2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 25px;
+	width: 30%;
+}
+
+#add-habit-cont {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 20px;
+}
+
+#add-habit-cont h1 {
 	color: #ff4f00;
 }
-#habitSelectorSubmit, #habitAdderSubmit{
-	background-color: #004DB3;
-	border: 1px solid black;
-	border-radius: 4px;
-	padding: 5px;
-	font-weight: bold;
+
+#form-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-#habit_selecter, #habit_form{
-	margin-bottom: 100px;
+
+#label-goal {
+	margin-bottom: 5px;
 }
-#habit_selecter h1, #habit_form h1{
-	font-size: 45px;
-	border: 2px solid #ff4f00;
-	margin-left: 75px;
-	margin-right: 75px;
-	margin-bottom: 100px;
+
+#goalName {
+	transform: skewX(-25deg);
+	border: 1px solid #801FCC;
 }
-#goalName{
-	margin-bottom: 15px;
+
+#habitAdderSubmit {
 	margin-top: 15px;
-	border: 2px solid black;
-	padding: 10px;
-}
-label span{
-	font-weight: bold;
-	font-size: 24px;
-}
-select{
-	margin-right: 25px;
+	background-color: #ff4f00;
+	/* background: url("../../svg/orange-trap-neon-tall.svg"); */
 	padding: 3px;
+	color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
 }
