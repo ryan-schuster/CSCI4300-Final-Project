@@ -18,7 +18,7 @@
         <link href="../../css/registerForm.css" rel="stylesheet">
     </head>
     <body>
-        <div>
+        <div id="align-div">
         <form id="signIn_form" action="../../php/signIn.php" onsubmit="return signInCheck()" method="POST">
             <h1>Sign in</h1>
             <div class="formDiv">
@@ -37,9 +37,7 @@
                 }?></span>
             </div>
             <br>
-            <input type="submit" id="signInSubmit" value="Sign in" style="background-color: orange;
-                width: 100%;
-                border-color:#BF7D00">
+            <input type="submit" id="signInSubmit" value="Sign in">
             <p></p>
             <a href="registration.html">No Account? Create one.</a>
             
