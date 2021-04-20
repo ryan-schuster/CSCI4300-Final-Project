@@ -99,7 +99,7 @@ if (isset($_SESSION["username"])) {
         <h1 id="percent-better-h1"><?php if ($percent == 1.00) {
             echo '0.00';
         } else {
-            echo $percent;}?>%!</h1>
+            echo $percent;}?></h1>
         <span></span>
         <p id="better-txt"><em>Better Than Before</em></p>
     </div>
@@ -114,7 +114,7 @@ if (isset($_SESSION["username"])) {
 
 
         <div id="new-achievements-cont">
-            <h2>New Achievments</h2>
+            <h2>New Achievements</h2>
             <span class="separator"></span>
             <a href="account/achieveAdderPage.php"><p class="plus">+</p></a>
             <?php if ($loggedIn) :?>
