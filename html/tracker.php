@@ -24,25 +24,25 @@ if (isset($_SESSION["username"])) {
     foreach ($userInfo as $score) {
         $percent = $score['score'];
     }
-    $query = "SELECT goals.goalName FROM goalslist INNER JOIN goals
+    $query = "SELECT goals.goalName, goals.goalID FROM goalslist INNER JOIN goals
     ON goals.goalID = goalslist.goalID WHERE goals.daily=0 AND $userID=userID AND completed=1";
     $queryAchieveComp = $db->prepare($query);
     $queryAchieveComp->execute();
     $achCompGuard = true;
 
-    $query = "SELECT goals.goalName FROM goalslist INNER JOIN goals
+    $query = "SELECT goals.goalName, goals.goalID FROM goalslist INNER JOIN goals
     ON goals.goalID = goalslist.goalID WHERE goals.daily=0 AND $userID=userID AND completed=0";
     $queryAchieve = $db->prepare($query);
     $queryAchieve->execute();
     $achGuard = true;
 
-    $query = "SELECT goals.goalName FROM goalslist INNER JOIN goals
+    $query = "SELECT goals.goalName, goals.goalID FROM goalslist INNER JOIN goals
     ON goals.goalID = goalslist.goalID WHERE goals.daily=1 AND $userID=userID AND completed=1";
     $queryHabitComp = $db->prepare($query);
     $queryHabitComp->execute();
     $habitCompGuard = true;
 
-    $query = "SELECT goals.goalName FROM goalslist INNER JOIN goals
+    $query = "SELECT goals.goalName, goals.goalID FROM goalslist INNER JOIN goals
     ON goals.goalID = goalslist.goalID WHERE goals.daily=1 AND $userID=userID AND completed=0";
     $queryHabit = $db->prepare($query);
     $queryHabit->execute();
@@ -50,7 +50,7 @@ if (isset($_SESSION["username"])) {
 
     $query = "SELECT goalName, daily, completed FROM personalGoalslist WHERE $userID=userID";
     $personalGL1 = $db->prepare($query);
-    $personalGL1->execute();
+    $personalGL1->execute(); 
 
     $query = "SELECT goalName, daily, completed FROM personalGoalslist WHERE $userID=userID";
     $personalGL2 = $db->prepare($query);
@@ -105,8 +105,8 @@ if (isset($_SESSION["username"])) {
     </div>
 
     <div id="flex-cont">
-        <div id="advance-the-day" class="clickable">
-            <h4>Finish the day!</h4>
+        <div id="advance-the-day">
+            <a href="../php/newDayReset.php"><h4>Finish the day!</h4></a>
         </div>
     </div>
 
@@ -122,8 +122,8 @@ if (isset($_SESSION["username"])) {
             foreach($queryAchieve as $a) {
                 ?>
                 <div class="achieve">
-                    <div class="circle clickable"></div>
-                    <p><?php echo $p['goalName'];
+                    <div id=<?php echo $a['goalID'];?> class="circle clickable"></div>
+                    <p><?php echo $a['goalName'];
                     $achGuard = false;?></p>
                 </div>
             <?php }?>
@@ -133,8 +133,8 @@ if (isset($_SESSION["username"])) {
                 if ($p['daily'] == 0 && $p['completed'] == 0) :?>
 
                     <div class="achieve">
-                        <div class="circle clickable"></div>
-                        <p <?php echo'id="a-' .$id_js_tracker. '"'; ?> >
+                        <div id=<?php echo $p['goalName'];?> class="circle clickable"></div>
+                        <p>
                             <?php echo $p['goalName'];
                         $pGuard1 = false;?></p>
                     </div>
@@ -196,7 +196,7 @@ if (isset($_SESSION["username"])) {
             <?php if ($loggedIn) :?>
             <?php foreach($queryHabit as $a) {?>
                 <div class="achieve-habit">
-                    <div class="circle"></div>
+                    <div id=<?php echo $a['goalID'];?> class="circle clickable"></div>
                     <p><?php echo $a['goalName'];
                     $habitGuard = false;?></p>
                 </div>
@@ -204,7 +204,7 @@ if (isset($_SESSION["username"])) {
             <?php foreach($personalGL3 as $p) {
                 if ($p['daily'] == 1 && $p['completed'] == 0) :?>
                     <div class="achieve-habit">
-                        <div class="circle"></div>
+                        <div id=<?php echo $p['goalName'];?> class="circle clickable"></div>
                         <p><?php echo $p['goalName'];
                         $pGuard3 = false;?></p>
                     </div>

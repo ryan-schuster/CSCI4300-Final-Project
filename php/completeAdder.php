@@ -30,7 +30,7 @@
                 $percent = $percent * 1.01;
             } else {
                 $query = $db->prepare("UPDATE goalsList SET 
-                completed = 1 WHERE goalId=$goalID AND userID=$userID");
+                completed = 1 WHERE goalID=$goalID AND userID=$userID");
                 $query->execute();
                 $percent = $percent * 1.01;
             }
