@@ -261,6 +261,12 @@ if (isset($_SESSION["username"])) {
 
     </div>
 
+
+    <?php 
+        $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
+        include $IPATH;
+    ?>
+
 </body>
 
     <script src="../js/jquery/jquery-3.6.0.min.js"></script>
