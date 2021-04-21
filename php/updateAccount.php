@@ -11,7 +11,7 @@
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = $db->prepare("UPDATE users SET userPassword='$password', name='$name', email='$email' WHERE
+        $query = $db->prepare("UPDATE users SET userPassword='$password', name='$name', email='$email', phone='$phone'  WHERE
         $userID = userID");
         $query->execute();
         $_SESSION["username"] = $name;

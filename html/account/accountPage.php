@@ -56,7 +56,7 @@ $userPersonalGoalsListInfo->execute();
     ?>
 
     <div id="whole">
-        <form id="register_form" action="../../php/updateAccount.php" onsubmit="return validateForm()" method="POST">
+        <form id="register_form" action="../../php/updateAccount.php" onsubmit="return validateForm2()" method="POST">
             <div id="inner-form-div">
                 <h1>Update account</h1>
 
@@ -70,6 +70,12 @@ $userPersonalGoalsListInfo->execute();
                     <label for="email" class=""><span>Email</span></label><br>
                     <input type="text" id="email" name="email">
                     <span id="emailErrorHtml" style="color:#ff4f00"></span>
+                </div>
+
+                <div class="formDiv">
+                    <label for="phone" class=""><span>Phone</span></label><br>
+                    <input type="text" id="phone" name="phone">
+                    <span id="phoneErrorHtml" style="color:#ff4f00"></span>
                 </div>
 
                 <div class="formDiv">

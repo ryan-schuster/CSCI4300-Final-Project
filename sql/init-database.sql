@@ -11,7 +11,7 @@ CREATE TABLE users
 	name VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
     userPassword VARCHAR(50) NOT NULL,
-    phone VARCHAR(10), 
+    phone VARCHAR(50) DEFAULT '000-000-0000', 
 	score DOUBLE(3, 2) DEFAULT 1.00	
 );
 
