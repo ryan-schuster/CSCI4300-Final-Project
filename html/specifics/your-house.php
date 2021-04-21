@@ -41,9 +41,9 @@ if (isset($_SESSION["username"])) {
             <div id="explore-cont-outer">
                 <h2>Explore</h2>
                 <div id="explore-cont-inner">
-                    <h4><a href="">Link</a></h4>
-                    <h4><a href="">Link</a></h4>
-                    <h4><a href="">Link</a></h4>
+                    <h4><a href="https://www.wisegoals.com/house-goals.html">House Goals</a></h4>
+                    <h4><a href="https://www.realhomes.com/us/advice/how-to-prepare-your-house-for-renovation">Home Renovation</a></h4>
+                    <h4><a href="https://www.bankrate.com/real-estate/flipping-houses/">House Flipping</a></h4>
                 </div>
             </div>
 

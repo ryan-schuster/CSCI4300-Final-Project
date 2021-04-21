@@ -60,8 +60,8 @@ $achGoalGuard = true;
                 <h2>Explore</h2>
                 <div id="explore-cont-inner">
                     <h4><a href="https://www.amazon.com/Make-Your-Bed-Little-Things/dp/1455570249/ref=asc_df_1455570249/?tag=hyprod-20&linkCode=df0&hvadid=312736349443&hvpos=&hvnetw=g&hvrand=8089379999530738774&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011070&hvtargid=pla-319833098068&psc=1&tag=&ref=&adgrpid=63700707018&hvpone=&hvptwo=&hvadid=312736349443&hvpos=&hvnetw=g&hvrand=8089379999530738774&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9011070&hvtargid=pla-319833098068">Make Your Bed</a></h4>
-                    <h4><a href="">Cleanliness and Focus</a></h4>
-                    <h4><a href="">Guide: Maximizing Space</a></h4>
+                    <h4><a href="https://www.architecturaldigest.in/content/expert-speak-what-is-the-psychology-behind-cleanliness/">Cleanliness and Focus</a></h4>
+                    <h4><a href="https://www.amazon.com/Small-Space-Organizing-Room-Room/dp/0800720288">Guide: Maximizing Space</a></h4>
                 </div>
             </div>
 

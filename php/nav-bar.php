@@ -25,9 +25,9 @@
                 <?php if ($loggedIn) : ?>
                     <li><a href="<?php echo $link;?>"><?php echo $account;?></a>
                         <ul>
-                            <!-- <div class="border-long">
+                            <div class="border-long">
                                 <li><a href="/CSCI4300-Final-Project/html/account/accountPage.php">Account Page</a></li>
-                            </div> -->
+                            </div> 
                             <div class="border-long">
                                 <li><a href="/CSCI4300-Final-Project/php/logout.php">Logout</a></li>
                             </div>

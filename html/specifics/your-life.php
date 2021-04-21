@@ -38,9 +38,9 @@
             <div id="explore-cont-outer">
                 <h2>Explore</h2>
                 <div id="explore-cont-inner">
-                    <h4><a href="">Link</a></h4>
-                    <h4><a href="">Link</a></h4>
-                    <h4><a href="">Link</a></h4>
+                    <h4><a href="https://medlineplus.gov/benefitsofexercise.html">Benefits of Exercise</a></h4>
+                    <h4><a href="https://www.mindtools.com/page6.html">Personal Goal Setting</a></h4>
+                    <h4><a href="https://www.mentalhealth.gov/basics/what-is-mental-health">Mental Health Importance</a></h4>
                 </div>
             </div>
 
