@@ -24,6 +24,10 @@
     $userID = $_SESSION["userID"];
     $userInfo = $db->prepare("SELECT * FROM users WHERE $userID=userID");//has userid, name, email, phone, password, score
     $userInfo->execute();
+
+    $userGoalLength = $db->prepare("SELECT goals.goalName, goalslist.completed, goals.daily FROM goals INNER JOIN goalslist ON 
+    goals.goalID=goalslist.goalID WHERE $userID=goalslist.userID");
+    $userGoalLength->execute();
     $userGoalslistInfo = $db->prepare("SELECT goals.goalName, goalslist.completed, goals.daily FROM goals INNER JOIN goalslist ON 
         goals.goalID=goalslist.goalID WHERE $userID=goalslist.userID");
     $userGoalslistInfo->execute();
@@ -50,7 +54,51 @@
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/nav-bar.php";
         include $IPATH;
     ?>
-    <div id="whole">
+    <div>
+    <h1>User Info</h2> 
+    <table>
+        <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+    <tr>
+        <?php foreach($userInfo as $u) {?>
+        <td> 
+           <?php echo $u['name'];?>
+        </td>
+        <td> <?php echo $u['email'];?>
+        </td>
+        <td> <?php echo $u['userPassword'];?>
+        </td>
+        </tr>
+        <?php }?>
+        </table>
+            <h2>User goals</h2>
+        <table>
+        <tr>
+        <th>Goal Name</th>
+        <th>Daily</th>
+        <th>Completed</th>
+    </tr>
+    <?php foreach ($userGoalLength as $gl) {?>
+    <tr>
+    <?php foreach ($userGoalslistInfo as $u) {?>
+        <td> <?php echo $u['goalName'];?>
+        </td>
+        <td> <?php echo $u['daily'];?>
+        </td>
+        <td> <?php echo $u['completed'];?>
+        </td>
+    </tr>
+        <?php };?>
+    <?php }?>
+        </table>
+
+
+
+</div>
+    <div id="whole" >
 	<form id="register_form" action="../../php/updateAccount.php" onsubmit="return validateForm()" method="POST">
             <h1>Update account</h1>
             <div class="formDiv">
