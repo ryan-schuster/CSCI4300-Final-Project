@@ -3,6 +3,10 @@ body {
     background-color: #E8E8E8; 
 }
 
+h1 {
+    color: #ff4f00;
+}
+
 #align-div {
     display: flex;
     align-content: center;
