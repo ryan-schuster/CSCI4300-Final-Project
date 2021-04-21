@@ -39,7 +39,7 @@
             <br>
             <input type="submit" id="signInSubmit" value="Sign in">
             <p></p>
-            <a href="registration.html">No Account? Create one.</a>
+            <a href="registration.php">No Account? Create one.</a>
             
         </form>
         </div>
