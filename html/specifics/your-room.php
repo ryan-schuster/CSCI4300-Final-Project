@@ -79,28 +79,37 @@ $achGoalGuard = true;
                     $count = 4;
                     foreach ($queryGoalsList as $a) {
                         if ($count == 0) break;
-                        $count--;
+                        if($a['daily']) {// do nothing
+                        } else {
+                            $count--;
                     ?>
-                        <div class="achieve" id=<?php echo $a['goalID']; ?>>
+                        <div class="achieve clickable" id=<?php echo $a['goalID']; ?>>
                             <p><?php echo $a['goalName'];
                                 $achGoalGuard = false; ?>
                             </p>
                         </div>
-                    <?php } ?>
+                    <?php 
+                        } // else end
+                    } // foreach end
+                ?>
                 </div>
                 <div id="suggestions-habits">
                 <?php 
                     $count = 4;
                     foreach($queryGoalsList as $a) {
                         if($count == 0) break;
-                        $count--;
+                        if($a['daily']) {
+                            $count--;
                 ?>
-                        <div class="achieved" id=<?php echo $a['goalID'];?>>
+                        <div class="achieved clickable" id=<?php echo $a['goalID'];?>>
                                 <p><?php echo $a['goalName'];
                                     $achGoalGuard = false;?>
                                 </p>
                         </div>
-                <?php }?>
+                <?php 
+                        } // if
+                    } // foreach
+                    ?>
                 </div>
             </div>
             <div id="space-footer"></div>
@@ -113,6 +122,10 @@ $achGoalGuard = true;
     include $IPATH;
     ?>
 
+    
+
 </body>
 
+<script src="/CSCI4300-Final-Project/js/specifics.js"></script>
+<script src="/CSCI4300-Final-Project/js/jquery/jquery-3.6.0.min.js"></script>
 </html>
