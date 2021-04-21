@@ -1,0 +1,43 @@
+label{
+	margin-right: 25px;
+	text-align: right;
+	width: 75px;
+	float: left;
+	padding-top: 2px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+#whole{
+	text-align: center;
+	background-color: white;
+    border-radius: 25px;
+	margin-left: 765px;
+	margin-right: 765px;
+	border: 2px bold black;
+}
+#fields{
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+#change{
+	margin-top: 20px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 5px;
+	width: 115px;
+	margin-left: 90px;
+}
+#whole form{
+    padding-top: 20px;
+	background-color: white;
+    border-radius: 0px;
+}
+br{
+	clear: both;
+}
+#username:invalid, #email:invalid, #phone:invalid{
+	border-color: red;
+}
+h1{
+	margin-left: 85px;
+}

@@ -8,6 +8,23 @@ if (isset($_SESSION["username"])) {
     $link = "";
     $loggedIn = true;
 }
+
+$dsn = 'mysql:host=localhost;dbname=bettereveryday';
+$dbUsername = 'root';
+$dbPassword = '';
+try {
+    $db = new PDO($dsn, $dbUsername, $dbPassword);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    $error_message = $e->getMessage();
+    echo "<p>An error occurred while connecting to the database: $error_message </p>";
+}
+
+$achGoalGuard = false;
+$query = "SELECT * FROM goals";
+$queryGoalsList = $db->prepare($query);
+$queryGoalsList->execute();
+$achGoalGuard = true;
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +65,56 @@ if (isset($_SESSION["username"])) {
             </div>
 
         </div>
+
+
+        <div id="example-cont-overall">
+            <div id="separator-cont">
+                <span></span>
+                <h2>Suggestions</h2>
+                <span></span>
+            </div>
+            <div id="the-suggestions">
+                <div id="suggestions-achievements">
+                    <?php
+                    $count = 4;
+                    foreach ($queryGoalsList as $a) {
+                        if ($count == 0) break;
+                        if($a['daily']) {// do nothing
+                        } else {
+                            $count--;
+                    ?>
+                        <div class="achieve clickable" id=<?php echo $a['goalID']; ?>>
+                            <p><?php echo $a['goalName'];
+                                $achGoalGuard = false; ?>
+                            </p>
+                        </div>
+                    <?php 
+                        } // else end
+                    } // foreach end
+                ?>
+                </div>
+                <div id="suggestions-habits">
+                <?php 
+                    $count = 4;
+                    foreach($queryGoalsList as $a) {
+                        if($count == 0) break;
+                        if($a['daily']) {
+                            $count--;
+                ?>
+                        <div class="achieved clickable" id=<?php echo $a['goalID'];?>>
+                                <p><?php echo $a['goalName'];
+                                    $achGoalGuard = false;?>
+                                </p>
+                        </div>
+                <?php 
+                        } // if
+                    } // foreach
+                    ?>
+                </div>
+            </div>
+            <div id="space-footer"></div>
+        </div>
+
     </div>
 
 
@@ -57,5 +124,8 @@ if (isset($_SESSION["username"])) {
     ?>
 
 </body>
+
+<script src="/CSCI4300-Final-Project/js/specifics.js"></script>
+<script src="/CSCI4300-Final-Project/js/jquery/jquery-3.6.0.min.js"></script>
 
 </html>
