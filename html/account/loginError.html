@@ -1,6 +1,47 @@
 <html>
+<head>
+	<style>
+		html{
+			background-color: #d3d3d3;
+		}
+		body{
+			text-align: center;
+			border: 4px solid red;
+			border-radius: 8px;
+			margin-left: 34%;
+			margin-right: 34%;
+			margin-bottom: 32%;
+			margin-top: 5%;
+			background-color: white;
+		}
+		#error_message{
+			font-weight: bold;
+			color: red;
+			margin-bottom: 35px;
+			margin-top: 30px;
+			font-size: 30px;
+			text-decoration-line: underline;
+		}
+		#sign_in{
+			margin-bottom: 20px;
+			font-size: 18px;
+			border: 2px solid blue;
+			padding: 7px;
+			padding-left: 15px;
+			padding-right: 15px;
+			color: #83d8eb;
+			font-weight: bold;
+			border-radius: 4px;
+			background-color: #1061eb;
+		}
+		a{
+			text-decoration-line: none;
+			font-weight: bold;
+		}
+	</style>
+</head>
     <body>
-        You need to sign in to access this feature.
-        <a href="signIn.php">Sign In</a>
+        <div id="error_message">You need to sign in to access this feature</div><br>
+		<a href="signIn.php"><input type="button" value="Sign In" id="sign_in"></a>
     </body>
 </html>
