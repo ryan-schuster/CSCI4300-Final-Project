@@ -99,7 +99,7 @@ if (isset($_SESSION["username"])) {
         <h1 id="percent-better-h1"><?php if ($percent == 1.00) {
             echo '0.00';
         } else {
-            echo $percent;}?></h1>
+            echo $percent;}?>%!</h1>
         <span></span>
         <p id="better-txt"><em>Better Than Before</em></p>
     </div>
