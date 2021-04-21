@@ -21,14 +21,40 @@
     $db = null;
 ?>
 <html>
+<head>
+<style>
+	div{
+		margin-left: 455px;
+		margin-right: 455px;
+		margin-top: 50px; 
+		border:black 2px solid;
+		background-color:#ffc04c;
+		border-radius: 8px;
+	}
+	h2{
+		text-align: center;
+	}
+	#success{
+		font-size: 55px;
+		padding-bottom: 70px;
+		margin-bottom: 0px;
+	}
+	#back, a{
+		border-top: 1px solid black;
+		text-decoration-line: none;
+		padding-bottom: 25px;
+		color: blue;
+		font-size: 30px;
+		background-color: #ffe26e;
+		margin-bottom: 0px;
+		padding-top: 20px; 
+	}
+</style>
+<head>
 <body>
-    <div style="margin-left: 455px;
-    margin-right: 455px;
-    margin-top: 50px; 
-    border:lightgrey .5px solid; background-color:#ffc04c">
-        <h2 style="text-align: center;">Account Successfully created</h2>
-        <br>
-        <a href="../html/main.php"><h2 style="text-align:center;">Back to home page</h2>
+    <div>
+        <h2 id="success">Account Successfully created</h2>
+        <a href="../html/main.php"><h2 id="back">Back to home page</h2>
     </div>
     </body>
 </html>
