@@ -28,11 +28,18 @@
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/nav-bar.php";
         include $IPATH;
     ?>
-    <br>
-    <div>
-        <h1>Account</h1>
-    </div>
-
+    <div id="whole">
+	<form action="" method="post">
+		<h1> Account Information </h1><br>
+		<label> Username: </label>
+		<input type="text" id="username" name="username" required><br>
+		<label> Email: </label>
+		<input type="text" id="email" name="email" required><br>
+		<label> Phone: </label>
+		<input type="text" id="phone" name="phone" required><br>
+		<input type="submit" id="change" value="Submit Changes">
+	</form>
+	</div>
     <?php 
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
         include $IPATH;
