@@ -91,7 +91,13 @@ $(".custom-menu li").click(function(){
     switch($(this).attr("data-action")) {
         
         // A case for each action. Your actions here
-        case "delete": alert("first"); break;
+        case "first":
+            $(".custom-menu").hide(100);
+            $(".custom-menu").css("bottom", 0, "left", 0);
+            var x = event.clientX, y = event.clientY,
+            elementMouseIsOver = document.elementFromPoint(x, y);
+            console.log(x, y, elementMouseIsOver);
+            break;
     }
   
     // Hide it AFTER the action was triggered
