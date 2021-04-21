@@ -41,6 +41,11 @@
     background-color: white;
     justify-content: space-between;
     align-items: center;
+    color: #801FCC;
+}
+
+h4 {
+    text-decoration: underline;
 }
 
 /* ------ */
@@ -84,7 +89,6 @@
     justify-content: center;
     margin-top: -10px;
     flex-basis: -moz-available;
-    border-right: 1px solid #801FCC;
 }
 
 .achieve {
