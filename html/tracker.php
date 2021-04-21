@@ -143,7 +143,7 @@ if (isset($_SESSION["username"])) {
             <?php if ($achGuard && $pGuard1) :?>
                 <div class="achieve">
                     <div class="circle"></div>
-                    <p>No achievements</p>
+                    <p>All done!</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
@@ -178,7 +178,7 @@ if (isset($_SESSION["username"])) {
             <?php if ($achCompGuard && $pGuard2) :?>
                 <div class="achieved">
                     <div class="circle"></div>
-                    <p>No Achievements</p>
+                    <p>All done!</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
@@ -213,7 +213,7 @@ if (isset($_SESSION["username"])) {
                 <?php if ($habitGuard && $pGuard3) :?>
                 <div class="achieve-habit">
                     <div class="circle"></div>
-                    <p>No habits</p>
+                    <p>Done for now!</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
@@ -247,7 +247,7 @@ if (isset($_SESSION["username"])) {
             <?php if ($habitCompGuard && $pGuard4) :?>
                 <div class="achieved-habit">
                     <div class="circle"></div>
-                    <p>Try completing a goal</p>
+                    <p>Check off a goal!</p>
                 </div>
                 <?php endif;?>
             <?php else : ?>
