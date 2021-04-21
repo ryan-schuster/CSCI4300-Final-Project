@@ -101,6 +101,7 @@
     <div id="whole" >
 	<form id="register_form" action="../../php/updateAccount.php" onsubmit="return validateForm()" method="POST">
             <h1>Update account</h1>
+            
             <div class="formDiv">
                 <label for="name" class=""><span>Your name</span></label><br>
                 <input type="text" id="name" name="name">
