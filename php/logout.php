@@ -1,5 +1,5 @@
 <?php
     session_start();
     session_destroy();
-    echo '<script>window.history.go(-1);</script>';
+    header("Location:/CSCI4300-Final-Project/html/main.php");
 ?>

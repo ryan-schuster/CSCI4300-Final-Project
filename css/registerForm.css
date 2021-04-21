@@ -28,6 +28,7 @@ form {
     border-radius: 25px;
     padding: 25px;
     padding-top: 0px;
+    min-width: 300px;
 }
 
 #register_form {

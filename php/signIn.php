@@ -24,7 +24,7 @@
             if ($guard) {
                 $_SESSION["username"] = $userFullName;
                 $_SESSION["userID"] = $userID;
-                echo '<script>window.history.go(-2);</script>';
+                header("Location:/CSCI4300-Final-Project/html/tracker.php");
             } else {
                 $_SESSION["error"] = "true";
                 header("Location:../html/account/signInPage.php"); 

@@ -37,9 +37,14 @@
                 }?></span>
             </div>
             <br>
-            <input type="submit" id="signInSubmit" value="Sign in">
-            <p></p>
-            <a href="registration.php">No Account? Create one.</a>
+            <div onClick="callSubmit()" id="change">Sign In</div>
+                <input type="submit" id="invis-submit">
+                <script>
+                    function callSubmit() {
+                        document.getElementById("invis-submit").click();
+                    }
+                </script>
+            <p><a href="registration.php">No Account? Create one.</a></p>
             
         </form>
         </div>

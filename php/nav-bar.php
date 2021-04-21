@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="/CSCI4300-Final-Project/css/nav-bar.css">
 
+<head>
+    <title>Better Every Day</title>
+    <link rel="shortcut icon" src="/CSCI4300-Final-Project/svg/orange-neon-diamond.svg">
+</head>
 
 <div id="nav-bar">
         <div id="nav-spacer-white"></div>
