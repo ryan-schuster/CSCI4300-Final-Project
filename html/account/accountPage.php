@@ -14,7 +14,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../../css/account/accountPage.css">
     <title>TBD</title>
     <!-- <link rel="shortcut icon" src="../img/qstion.webp">
     <meta charset="utf-8">
