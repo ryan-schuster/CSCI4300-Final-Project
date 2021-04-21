@@ -2,17 +2,19 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $phone = $_POST['phone'];
     $dsn = 'mysql:host=localhost;dbname=bettereveryday';
     $dbUsername = 'root';
     $dbPassword = '';
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = $db->prepare("INSERT INTO users (name, email, userPassword)
-        VALUES (:name, :email, :password)");
+        $query = $db->prepare("INSERT INTO users (name, email, userPassword, phone)
+        VALUES (:name, :email, :password, :phone)");
         $query->bindParam(':name', $name);
         $query->bindParam(':email', $email);
         $query->bindParam(':password', $password);
+        $query->bindParam(':phone', $phone);
         $query->execute();
         } catch (PDOException $e) {
         $error_message = $e->getMessage();
