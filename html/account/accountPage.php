@@ -29,14 +29,14 @@
         include $IPATH;
     ?>
     <div id="whole">
-	<form action="" method="post">
+	<form action="signIn.php" method="post">
 		<h1> Account Information </h1><br>
 		<label> Username: </label>
 		<input type="text" id="username" name="username" required><br>
 		<label> Email: </label>
-		<input type="text" id="email" name="email" required><br>
+		<input type="email" id="email" name="email" required><br>
 		<label> Phone: </label>
-		<input type="text" id="phone" name="phone" required><br>
+		<input type="tel" id="phone" name="phone" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Example format: 111-111-1111"><br>
 		<input type="submit" id="change" value="Submit Changes">
 	</form>
 	</div>
