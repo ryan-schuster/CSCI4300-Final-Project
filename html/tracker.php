@@ -261,6 +261,9 @@ if (isset($_SESSION["username"])) {
 
     </div>
 
+    <ul class='custom-menu'>
+        <li data-action="first">Delete</li>
+    </ul>
 
     <?php 
         $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
