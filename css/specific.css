@@ -139,3 +139,7 @@ h4 {
 #space-footer {
     height: 50px;
 }
+
+.clickable {
+    cursor: pointer;
+}

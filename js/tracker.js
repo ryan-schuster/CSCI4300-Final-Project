@@ -1,6 +1,6 @@
 // Check off achievement or habit
 $(".circle").click(function() {
-    //$(this).toggleClass("clicked");
+    $(this).toggleClass("clicked");
 
     if (/^-?\d+$/.test($(this).attr('id'))) {
         var itemID = parseInt($(this).attr('id'));
