@@ -34,3 +34,72 @@ $("#advance-the-day").click(function() {
             location.reload();
         });
 });
+
+var cntrlIsPressed = false;
+$(document).keydown(function(e){
+    if(e.keycode = 17) {
+        cntrlIsPressed = true;
+    }
+});
+
+$(document).keyup(function(e){
+    if(e.keycode != 17) {
+        cntrlIsPressed = false;
+    }
+});
+
+// Trigger action when the contexmenu is about to be shown
+$(document).bind("contextmenu", function (event) {
+    
+    if(cntrlIsPressed) {return;}
+    console.log(cntrlIsPressed);
+
+    // Avoid the real one
+    event.preventDefault();
+    
+
+    // ---------
+
+    // Show contextmenu
+    $(".custom-menu").finish().toggle(100).
+    
+    // In the right position (the mouse)
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
+
+
+// If the document is clicked somewhere
+
+$(document).bind("mousedown", function (e) {
+    
+    // If the clicked element is not the menu
+    if (!$(e.target).parents(".custom-menu").length > 0) {
+        
+        // Hide it
+        $(".custom-menu").hide(100);
+    }
+});
+
+
+// If the menu element is clicked
+$(".custom-menu li").click(function(){
+    
+    // This is the triggered action name
+    switch($(this).attr("data-action")) {
+        
+        // A case for each action. Your actions here
+        case "first":
+            $(".custom-menu").hide(100);
+            $(".custom-menu").css("bottom", 0, "left", 0);
+            var x = event.clientX, y = event.clientY,
+            elementMouseIsOver = document.elementFromPoint(x, y);
+            console.log(x, y, elementMouseIsOver);
+            break;
+    }
+  
+    // Hide it AFTER the action was triggered
+    $(".custom-menu").hide(100);
+  });
