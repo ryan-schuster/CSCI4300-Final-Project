@@ -3,19 +3,21 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 30px;
-	margin-top: 70px;
+	margin-top: 90px;
 }
 
 form{
 	border-radius: 25px;
     padding: 0 20px 20px 20px;
 	background-color: white;
+	min-width: 350px;
 }
 
 #inner-form-div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	min-width: 350px;
 }
 
 h1 {
@@ -23,14 +25,9 @@ h1 {
 }
 
 label{
-	margin-right: 25px;
-	text-align: right;
-	width: 75px;
-	float: left;
-	padding-top: 2px;
 	font-weight: bold;
-	margin-bottom: 20px;
 	color: #801FCC;
+	margin-bottom: 20px;
 }
 
 input {
@@ -38,6 +35,7 @@ input {
 	background-color: #E8E8E8;
 	border-radius: 25px;
 	border: none;
+	min-height: 20px;
 
 	transition: all 0.5s;
 }
@@ -74,4 +72,26 @@ input:invalid {
 	visibility: hidden;
 	height: 0px;
 	width: 0px;
+}
+
+/* ----- */
+
+#usr-inf-cont {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#user-info {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	border-radius: 25px;
+	background-color: white;
+	padding: 0 20px 20px 20px;
+	margin-bottom: 40px;
+}
+
+table {
+	text-align: left;
 }
