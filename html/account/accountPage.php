@@ -49,7 +49,7 @@
         include $IPATH;
     ?>
     <div id="whole">
-	<form action="signIn.php" method="post">
+	<form action="signInPage.php" method="post" name="update-info">
         <div id="inner-form-div">
 		<h1> Account Information </h1>
 
@@ -68,9 +68,15 @@
 		<input type="tel" id="phone" name="phone" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Example format: 111-111-1111"><br>
         </div>
 
-		<div onClick="document.forms['search-form'].submit();" id="change">
+		<div onClick="callSubmit()" id="change">
             Submit Changes
         </div>
+        <input type="submit" id="invis-submit">
+        <script>
+            function callSubmit() {
+                document.getElementById("invis-submit").click();
+            }
+        </script>
 	</form>
 	</div>
     <?php 
