@@ -8,6 +8,14 @@
         $link = "";
         $loggedIn = true;
     } 
+    $userID = $_SESSION["userID"];
+    $userInfo = $db->prepare("SELECT * FROM users WHERE $userID=userID");//has userid, name, email, phone, password, score
+    $userInfo->execute();
+    $userGoalslistInfo = $db->prepare("SELECT goals.goalName, goalslist.completed, goals.daily FROM goals INNER JOIN goalslist ON 
+        goals.goalID=goalslist.goalID WHERE $userID=goalslist.userID");
+    $userGoalslistInfo->execute();
+    $userPersonalGoalsListInfo = $db->prepare("SELECT goalName, completed, daily FROM personalGoalslist WHERE $userID=userID");
+    $userPersonalGoalsListInfo->execute();
 ?>
 
 <!DOCTYPE html>
