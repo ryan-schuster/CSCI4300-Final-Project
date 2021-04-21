@@ -24,7 +24,7 @@
             if ($guard) {
                 $_SESSION["username"] = $userFullName;
                 $_SESSION["userID"] = $userID;
-                include "../html/account/signedIn.html";
+                echo '<script>window.history.go(-2);</script>';
             } else {
                 $_SESSION["error"] = "true";
                 header("Location:../html/account/signInPage.php"); 
