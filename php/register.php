@@ -23,13 +23,17 @@
 <html>
 <head>
 <style>
+
+	body {
+		background-color: #E8E8E8;
+	}
+
 	div{
 		margin-left: 455px;
 		margin-right: 455px;
-		margin-top: 50px; 
-		border:black 2px solid;
-		background-color:#ffc04c;
-		border-radius: 8px;
+		margin-top: 50px;
+		background-color: white;
+		border-radius: 25px;
 	}
 	h2{
 		text-align: center;
@@ -40,12 +44,11 @@
 		margin-bottom: 0px;
 	}
 	#back, a{
-		border-top: 1px solid black;
+		border-top: 1px solid #801FCC;
 		text-decoration-line: none;
 		padding-bottom: 25px;
-		color: blue;
+		color: #ff4f00;
 		font-size: 30px;
-		background-color: #ffe26e;
 		margin-bottom: 0px;
 		padding-top: 20px; 
 	}
