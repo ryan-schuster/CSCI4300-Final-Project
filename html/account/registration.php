@@ -7,7 +7,7 @@
         <link href="../../css/registerForm.css" rel="stylesheet">
     </head>
     <body>
-        <div>
+        <div id="align-div">
         <form id="register_form" action="../../php/register.php" onsubmit="return validateForm()" method="POST">
             <h1>Create account</h1>
             <div class="formDiv">
@@ -26,8 +26,13 @@
                 <span id="passwordErrorHtml"></span>
             </div>
             <br>
-            <input type="submit" id="registerSubmit" value="Create account">
-            
+            <div onClick="callSubmit()" id="change">Create!</div>
+                <input type="submit" id="invis-submit">
+                <script>
+                    function callSubmit() {
+                        document.getElementById("invis-submit").click();
+                    }
+                </script>
         </form>
         </div>
     </body>
