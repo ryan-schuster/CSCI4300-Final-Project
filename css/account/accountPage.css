@@ -1,3 +1,27 @@
+#whole{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+	margin-top: 70px;
+}
+
+form{
+	border-radius: 25px;
+    padding: 0 20px 20px 20px;
+	background-color: white;
+}
+
+#inner-form-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	color: #ff4f00;
+}
+
 label{
 	margin-right: 25px;
 	text-align: right;
@@ -8,49 +32,39 @@ label{
 	margin-bottom: 20px;
 	color: #801FCC;
 }
-#whole{
-	text-align: center;
-	background-color: white;
-    border-radius: 25px;
-	margin-left: 755px;
-	margin-right: 755px;
-	display: flex;
-	padding-left: 50px;
-	padding-right: 50px;
+
+input {
+	padding-left: 15px;
+	background-color: #E8E8E8;
+	border-radius: 25px;
+	border: none;
+
+	transition: all 0.5s;
 }
+
+input:focus {
+	outline: none;
+	transform: scale(1.1);
+	transition: all 0.5s ease-in-out;
+}
+
+input:invalid {
+	border: 1px solid red;
+}
+
 #fields{
 	margin-bottom: 20px;
 	padding-top: 20px;
 }
 #change{
-	margin-top: 20px;
-	padding-right: 0px;
-	padding-left: 0px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	width: 115px;
-	margin-left: 90px;
+	text-align: center;
+	padding: 10px;
 	font-weight: bold;
-	border: 1px solid black;
-	background-color: #ff4f00;
-	color: #801FCC;
-}
-#whole form{
-    padding-top: 20px;
-	background-color: white;
-    border-radius: 0px;
-}
-br{
-	clear: both;
-}
-#username:invalid, #email:invalid, #phone:invalid{
-	border-color: red;
-}
-h1{
-	margin-left: 85px;
-	color: #ff4f00;
-}
-body{
-	border-radius: 25px;
-	background-color: #E8E8E8;
+	background-image: url("../../svg/orange-trap-neon-longtall.svg");
+	color: white;
+	background-position: 50% 55%;
+    background-repeat: no-repeat;
+	width: 160px;
+	height: 25px;
+    background-size: 160px 25px;
 }
