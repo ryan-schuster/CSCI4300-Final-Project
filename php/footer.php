@@ -3,10 +3,10 @@
   
 <div id="footer">
   <span class="support_links"><a href="#"> support_link_a </a></span>
-  <span class="support_links"><a href="#"> support_link_b </a></span>
-  <span class="support_links"><a href="#"> support_link_c </a></span>
+  <span class="support_links"><a href="#"> Research </a></span>
+  <span class="support_links"><a href="#"> Customer Support </a></span>
   
-  <span id="copyright"> ©SomeCompany </span>
+  <span id="copyright"> ©BetterEveryDay </span>
 </div>
 <?php 
         $IPATH = "/CSCI4300-Final-Project/js/";
