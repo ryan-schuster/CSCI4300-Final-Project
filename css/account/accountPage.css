@@ -67,4 +67,11 @@ input:invalid {
 	width: 160px;
 	height: 25px;
     background-size: 160px 25px;
+	cursor: pointer;
+}
+
+#invis-submit {
+	visibility: hidden;
+	height: 0px;
+	width: 0px;
 }
