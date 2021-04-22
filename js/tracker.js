@@ -35,27 +35,30 @@ $("#advance-the-day").click(function() {
         });
 });
 
-var cntrlIsPressed = false;
-$(document).keydown(function(e){
-    if(e.keycode = 17) {
-        cntrlIsPressed = true;
-    }
-});
-
-$(document).keyup(function(e){
-    if(e.keycode != 17) {
-        cntrlIsPressed = false;
-    }
-});
-
+var deleteString; // Global delete variable
 // Trigger action when the contexmenu is about to be shown
 $(document).bind("contextmenu", function (event) {
     
-    if(cntrlIsPressed) {return;}
-    console.log(cntrlIsPressed);
 
-    // Avoid the real one
-    event.preventDefault();
+    var x = event.clientX, y = event.clientY;
+    var msOverElement = document.elementFromPoint(x, y);
+    var parent = msOverElement.parentElement;
+    var clickedElement = msOverElement;
+
+    var achieveElement = 
+        (parent.className === "achieve" || 
+        parent.className === "achieve-habit")
+         ? parent : clickedElement;
+
+    if(achieveElement.className === "achieve" ||
+        achieveElement.className === "achieve-habit") {
+        event.preventDefault();
+        // .children()[0].childNodes[0].data
+        deleteString = achieveElement.children[0].id;
+    } else {
+        console.log("not achieve");
+        return;
+    }
     
 
     // ---------
@@ -92,11 +95,13 @@ $(".custom-menu li").click(function(){
         
         // A case for each action. Your actions here
         case "first":
-            $(".custom-menu").hide(100);
-            $(".custom-menu").css("bottom", 0, "left", 0);
-            var x = event.clientX, y = event.clientY,
-            elementMouseIsOver = document.elementFromPoint(x, y);
-            console.log(x, y, elementMouseIsOver);
+            $.post( 
+                '../php/personalGoalListDeleter.php', // location of your php script
+                {goalName: deleteString}, // any data you want to send to the script
+                function( data ){  // a function to deal with the returned information
+                    // Reload the page
+                    location.reload();
+                });
             break;
     }
   
