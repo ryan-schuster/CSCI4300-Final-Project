@@ -28,7 +28,7 @@ $userInfo->execute();
 $userGoalLength = $db->prepare("SELECT goals.goalName, goalslist.completed, goals.daily FROM goals INNER JOIN goalslist ON 
     goals.goalID=goalslist.goalID WHERE $userID=goalslist.userID");
 $userGoalLength->execute();
-$userGoalslistInfo = $db->prepare("SELECT goals.goalName, goalslist.completed, goals.daily FROM goals INNER JOIN goalslist ON 
+$userGoalslistInfo = $db->prepare("SELECT goals.goalName, goalslist.completed, goals.daily, goalslist.goalID FROM goals INNER JOIN goalslist ON 
         goals.goalID=goalslist.goalID WHERE $userID=goalslist.userID");
 $userGoalslistInfo->execute();
 $userPersonalGoalsListInfo = $db->prepare("SELECT goalName, completed, daily FROM personalGoalslist WHERE $userID=userID");
@@ -139,7 +139,13 @@ $userPersonalGoalsListLength->execute();
                             </td>
                             <td> <?php echo $u['completed']; ?>
                             </td>
-                    </tr>
+                            <td>
+                                <form action="../../php/goalListDeleter.php" method="post">
+                                <input type="submit" value="Delete">
+                                <input type="hidden" name="goalID" value="<?php echo $u['goalID'];?>">
+                                </form>
+                            </td>
+                        </tr>
                 <?php }; ?>
             <?php } ?>
             <?php foreach ($userPersonalGoalsListLength as $gl) { ?>
@@ -150,6 +156,12 @@ $userPersonalGoalsListLength->execute();
                             <td> <?php echo $u['daily']; ?>
                             </td>
                             <td> <?php echo $u['completed']; ?>
+                            </td>
+                            <td>
+                                <form action="../../php/personalGoalListDeleter.php" method="post">
+                                <input type="submit" value="Delete">
+                                <input type="hidden" name="goalName" value="<?php echo $u['goalName'];?>">
+                                </form>
                             </td>
                     </tr>
                 <?php }; ?>

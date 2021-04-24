@@ -7,13 +7,13 @@
         $goalName=($_POST['goalName']);
     }
     session_start();
+    $userID = $_SESSION["userID"];
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $query = $db->prepare('DELETE FROM personalgoalslist WHERE goalName = :goalName');
-                $query->bindParam(':goalName', $goalName);
+                $query = $db->prepare("DELETE FROM personalgoalslist WHERE goalName = '$goalName' AND userID=$userID");
                 $query->execute();
-                header("Location:../html/tracker.php");
+                header("Location:../html/account/accountPage.php");
 
         } catch (PDOException $e) {
         $error_message = $e->getMessage();
