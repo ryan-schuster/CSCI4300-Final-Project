@@ -9,13 +9,28 @@
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = $db->prepare("INSERT INTO users (name, email, userPassword, phone)
-        VALUES (:name, :email, :password, :phone)");
-        $query->bindParam(':name', $name);
-        $query->bindParam(':email', $email);
-        $query->bindParam(':password', $password);
-        $query->bindParam(':phone', $phone);
+        $query = $db->prepare("SELECT email, userPassword, userID, name FROM users"); 
         $query->execute();
+        $array = $query->fetchAll();
+        $guard = true;
+        foreach ($array as $row) {
+            if ($row[0] == $email) {
+                    $guard = false;
+            }
+        }
+        if ($guard) {
+            $query = $db->prepare("INSERT INTO users (name, email, userPassword, phone)
+            VALUES (:name, :email, :password, :phone)");
+            $query->bindParam(':name', $name);
+            $query->bindParam(':email', $email);
+            $query->bindParam(':password', $password);
+            $query->bindParam(':phone', $phone);
+            $query->execute();
+        } else {
+            session_start();
+            $_SESSION["sameEmail"] = "true";
+            header("Location:/CSCI4300-Final-Project/html/account/registration.php");
+        }
         } catch (PDOException $e) {
         $error_message = $e->getMessage();
         echo "<p>An error occurred while connecting to the database: $error_message </p>";

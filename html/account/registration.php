@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+    $guard2 = false;
+    if (isset($_SESSION["sameEmail"])) {
+        $guard2 = true;
+    }
+    session_destroy();
+?>
+
+
 <!DOCTYPE html>
 <html> <!--a button at the bottom of sign in page should led to this page where user can register an account --->
     <head>
@@ -18,7 +28,10 @@
             <div class="formDiv">
                 <label for="email" class=""><span>Email</span></label><br>
                 <input type="text" id="email" name="email">
-                <span id="emailErrorHtml"></span>
+                <span id="emailErrorHtml"><?php if($guard2) {?>
+                    <?php echo "Email address already in system";?>
+                <?php } ?></span>
+                
             </div>
             <div class="formDiv">
                 <label for="password" class=""><span>Password</span></label><br>

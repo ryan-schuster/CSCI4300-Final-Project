@@ -4,6 +4,7 @@
     if (isset($_SESSION["error"])) {
         $guard = true;
     }
+
     unset($_SESSION["error"]);
 ?>
 
@@ -27,9 +28,11 @@
                 <span id="emailErrorHtmlSignIn" style="color:#801FCC"><?php if($guard) {?>
                     <?php echo "Incorrect email and password combo";?>
                 <?php } ?></span>
-                
-            </div>
-            <div class="formDiv">
+
+
+
+                            <div class="formDiv">
+
                 <label for="password" class=""><span>Password</span></label><br>
                 <input type="password" placeholder="At least 7 characters" name="password" id="password">
                 <span id="passwordErrorHtmlSignIn" style="color:#801FCC; padding-bottom: 1em"><?php if($guard) {

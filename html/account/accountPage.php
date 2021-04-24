@@ -33,6 +33,9 @@ $userGoalslistInfo = $db->prepare("SELECT goals.goalName, goalslist.completed, g
 $userGoalslistInfo->execute();
 $userPersonalGoalsListInfo = $db->prepare("SELECT goalName, completed, daily FROM personalGoalslist WHERE $userID=userID");
 $userPersonalGoalsListInfo->execute();
+$userPersonalGoalsListLength = $db->prepare("SELECT goalName, completed, daily FROM personalGoalslist WHERE $userID=userID");
+$userPersonalGoalsListLength->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -104,6 +107,7 @@ $userPersonalGoalsListInfo->execute();
                     <th>Name</th>
                     <th>Email</th>
                     <th>Password</th>
+                    <th>Phone</th>
                 </tr>
                 <tr>
                     <?php foreach ($userInfo as $u) { ?>
@@ -113,6 +117,8 @@ $userPersonalGoalsListInfo->execute();
                         <td> <?php echo $u['email']; ?>
                         </td>
                         <td> <?php echo $u['userPassword']; ?>
+                        </td>
+                        <td> <?php echo $u['phone']; ?>
                         </td>
                 </tr>
             <?php } ?>
@@ -127,6 +133,18 @@ $userPersonalGoalsListInfo->execute();
                 <?php foreach ($userGoalLength as $gl) { ?>
                     <tr>
                         <?php foreach ($userGoalslistInfo as $u) { ?>
+                            <td> <?php echo $u['goalName']; ?>
+                            </td>
+                            <td> <?php echo $u['daily']; ?>
+                            </td>
+                            <td> <?php echo $u['completed']; ?>
+                            </td>
+                    </tr>
+                <?php }; ?>
+            <?php } ?>
+            <?php foreach ($userPersonalGoalsListLength as $gl) { ?>
+                    <tr>
+                        <?php foreach ($userPersonalGoalsListInfo as $u) { ?>
                             <td> <?php echo $u['goalName']; ?>
                             </td>
                             <td> <?php echo $u['daily']; ?>

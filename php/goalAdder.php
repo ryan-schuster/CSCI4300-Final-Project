@@ -6,6 +6,7 @@
     $guard = false;
     $goalName = $_POST['goalName'];
     $daily = false;
+    $userID = $_SESSION["userID"];
     if ($_SESSION["habit"]) {
         $daily = true;
     } else {
@@ -14,7 +15,7 @@
     try {
         $db = new PDO($dsn, $dbUsername, $dbPassword);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = $db->prepare("SELECT goalName FROM goals"); 
+        $query = $db->prepare("SELECT goalName FROM personalGoalsList WHERE $userID=userID"); 
         $query->execute();
         $array = $query->fetchAll();
         foreach ($array as $row) {
