@@ -23,6 +23,15 @@
                     $guard = true;
             }
         }
+        $query = $db->prepare("SELECT goals.goalName FROM goalsList INNER JOIN goals ON
+        goals.goalID=goalsList.goalID INNER JOIN users ON goalsList.userID=users.userID WHERE $userID=goalsList.userID"); 
+        $query->execute();
+        $array = $query->fetchAll();
+        foreach ($array as $row) {
+            if ($row[0] == $goalName) {
+                    $guard = true;
+            }
+        }
             if ($guard) {
                 $_SESSION["error"] = "true";
                 if ($_SESSION["habit"]) {
