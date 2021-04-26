@@ -23,7 +23,9 @@ try {
 $achGoalGuard = false;
 $query = "SELECT * FROM goals";
 $queryGoalsList = $db->prepare($query);
+$queryGoalsList2 = $db->prepare($query);
 $queryGoalsList->execute();
+$queryGoalsList2->execute();
 $achGoalGuard = true;
 ?>
 
@@ -81,7 +83,7 @@ $achGoalGuard = true;
                         if ($count == 0) break;
                         if($a['daily']) {// do nothing
                         } else {
-                            $count--;
+                            // $count--;
                     ?>
                         <div class="achieve clickable" id=<?php echo $a['goalID']; ?>>
                             <p><?php echo $a['goalName'];
@@ -96,10 +98,10 @@ $achGoalGuard = true;
                 <div id="suggestions-habits">
                 <?php 
                     $count = 4;
-                    foreach($queryGoalsList as $a) {
+                    foreach($queryGoalsList2 as $a) {
                         if($count == 0) break;
                         if($a['daily']) {
-                            $count--;
+                            // $count--;
                 ?>
                         <div class="achieved clickable" id=<?php echo $a['goalID'];?>>
                                 <p><?php echo $a['goalName'];
