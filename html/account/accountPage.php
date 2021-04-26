@@ -65,26 +65,34 @@ $userPersonalGoalsListLength->execute();
 
                 <div class="formDiv">
                     <label for="name" class=""><span>Your name</span></label><br>
+                    <div class="align-column">
                     <input type="text" id="name" name="name">
                     <span id="nameErrorHtml" style="color:#ff4f00"></span>
+                    </div>
                 </div>
 
                 <div class="formDiv">
                     <label for="email" class=""><span>Email</span></label><br>
+                    <div class="align-column">
                     <input type="text" id="email" name="email">
                     <span id="emailErrorHtml" style="color:#ff4f00"></span>
+                    </div>
                 </div>
 
                 <div class="formDiv">
                     <label for="phone" class=""><span>Phone</span></label><br>
+                    <div class="align-column">
                     <input type="text" id="phone" name="phone">
                     <span id="phoneErrorHtml" style="color:#ff4f00"></span>
+                    </div>
                 </div>
 
                 <div class="formDiv">
                     <label for="password" class=""><span>Password</span></label><br>
+                    <div class="align-column">
                     <input type="password" placeholder="At least 7 characters" name="password" id="password">
                     <span id="passwordErrorHtml" style="color:#ff4f00"></span>
+                    </div>
                 </div>
 
                 <br/>

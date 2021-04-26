@@ -50,7 +50,7 @@ if (isset($_SESSION["username"])) {
 
     $query = "SELECT goalName, daily, completed FROM personalGoalslist WHERE $userID=userID";
     $personalGL1 = $db->prepare($query);
-    $personalGL1->execute(); 
+    $personalGL1->execute();
 
     $query = "SELECT goalName, daily, completed FROM personalGoalslist WHERE $userID=userID";
     $personalGL2 = $db->prepare($query);
@@ -93,20 +93,20 @@ if (isset($_SESSION["username"])) {
     ?>
 
     <div id="percent-better-cont">
-        <?php/*  
-            $modifiedPercent = substr($percent, 0, 6);
-        */?>
         <h1 id="percent-better-h1"><?php if ($percent == 1.00) {
-            echo '0.00';
-        } else {
-            echo $percent;}?>%!</h1>
+                                        echo '0.00';
+                                    } else {
+                                        echo $percent;
+                                    } ?>%!</h1>
         <span></span>
         <p id="better-txt"><em>Better Than Before</em></p>
     </div>
 
     <div id="flex-cont">
         <div id="advance-the-day">
-            <a href="../php/newDayReset.php"><h4>Finish the day!</h4></a>
+            <a href="../php/newDayReset.php">
+                <h4>Finish the day!</h4>
+            </a>
         </div>
     </div>
 
@@ -116,42 +116,46 @@ if (isset($_SESSION["username"])) {
         <div id="new-achievements-cont">
             <h2>New Achievements</h2>
             <span class="separator"></span>
-            <a href="account/achieveAdderPage.php"><p class="plus">+</p></a>
-            <?php if ($loggedIn) :?>
-            <?php 
-            foreach($queryAchieve as $a) {
+            <a href="account/achieveAdderPage.php">
+                <p class="plus">+</p>
+            </a>
+            <?php if ($loggedIn) : ?>
+                <?php
+                foreach ($queryAchieve as $a) {
                 ?>
-                <div class="achieve">
-                    <div id=<?php echo $a['goalID'];?> class="circle clickable"></div>
-                    <p><?php echo $a['goalName'];
-                    $achGuard = false;?></p>
-                </div>
-            <?php }?>
-            <?php 
-            $id_js_tracker = 0;
-            foreach($personalGL1 as $p) { // Render loop
-                if ($p['daily'] == 0 && $p['completed'] == 0) :?>
-
                     <div class="achieve">
-                        <div id=<?php echo $p['goalName'];?> class="circle clickable"></div>
-                        <p>
-                            <?php echo $p['goalName'];
-                        $pGuard1 = false;?></p>
+                        <div id=<?php echo $a['goalID']; ?> class="circle clickable"></div>
+                        <p><?php echo $a['goalName'];
+                            $achGuard = false; ?></p>
                     </div>
-                    <?php $id_js_tracker++; // Assigning unique ids for javascript access?> 
-                <?php endif;}?>
-            <?php if ($achGuard && $pGuard1) :?>
-                <div class="achieve">
-                    <div class="circle"></div>
-                    <p>All done!</p>
-                </div>
-                <?php endif;?>
+                <?php } ?>
+                <?php
+                $id_js_tracker = 0;
+                foreach ($personalGL1 as $p) { // Render loop
+                    if ($p['daily'] == 0 && $p['completed'] == 0) : ?>
+
+                        <div class="achieve">
+                            <div id=<?php echo $p['goalName']; ?> class="circle clickable"></div>
+                            <p>
+                                <?php echo $p['goalName'];
+                                $pGuard1 = false; ?></p>
+                        </div>
+                        <?php $id_js_tracker++; // Assigning unique ids for javascript access
+                        ?>
+                <?php endif;
+                } ?>
+                <?php if ($achGuard && $pGuard1) : ?>
+                    <div class="achieve">
+                        <div class="circle"></div>
+                        <p>All done!</p>
+                    </div>
+                <?php endif; ?>
             <?php else : ?>
                 <div class="achieve">
                     <div class="circle"></div>
                     <p>Try logging in</p>
                 </div>
-            <?php endif;?>
+            <?php endif; ?>
 
 
             <div class="complete-bar">
@@ -159,105 +163,110 @@ if (isset($_SESSION["username"])) {
                 <p><em>Completed Total</em></p>
                 <span></span>
             </div>
-            <?php if ($loggedIn) :?>
-            <?php foreach($queryAchieveComp as $aC) {?>
-                <div class="achieved">
-                    <div class="circle"></div>
-                    <p><?php echo $aC['goalName'];
-                    $achCompGuard = false;?></p>
-                </div>
-            <?php }?>
-            <?php foreach($personalGL2 as $p) {
-                if ($p['daily'] == 0 && $p['completed'] == 1) :?>
+            <?php if ($loggedIn) : ?>
+                <?php foreach ($queryAchieveComp as $aC) { ?>
                     <div class="achieved">
                         <div class="circle"></div>
-                        <p><?php echo $p['goalName'];
-                        $pGuard2 = false;?></p>
+                        <p><?php echo $aC['goalName'];
+                            $achCompGuard = false; ?></p>
                     </div>
-                <?php endif;}?>
-            <?php if ($achCompGuard && $pGuard2) :?>
-                <div class="achieved">
-                    <div class="circle"></div>
-                    <p>All done!</p>
-                </div>
-                <?php endif;?>
+                <?php } ?>
+                <?php foreach ($personalGL2 as $p) {
+                    if ($p['daily'] == 0 && $p['completed'] == 1) : ?>
+                        <div class="achieved">
+                            <div class="circle"></div>
+                            <p><?php echo $p['goalName'];
+                                $pGuard2 = false; ?></p>
+                        </div>
+                <?php endif;
+                } ?>
+                <?php if ($achCompGuard && $pGuard2) : ?>
+                    <div class="achieved">
+                        <div class="circle"></div>
+                        <p>All done!</p>
+                    </div>
+                <?php endif; ?>
             <?php else : ?>
                 <div class="achieved">
                     <div class="circle"></div>
                     <p>Try logging in</p>
                 </div>
-            <?php endif;?>
+            <?php endif; ?>
         </div>
 
         <div id="excellent-habits-cont">
             <h2>Excellent Habits</h2>
             <span class="separator"></span>
-            <a href="account/habitAdderPage.php"><p class="plus">+</p></a>
-            <?php if ($loggedIn) :?>
-            <?php foreach($queryHabit as $a) {?>
-                <div class="achieve-habit">
-                    <div id=<?php echo $a['goalID'];?> class="circle clickable"></div>
-                    <p><?php echo $a['goalName'];
-                    $habitGuard = false;?></p>
-                </div>
-            <?php }?>
-            <?php foreach($personalGL3 as $p) {
-                if ($p['daily'] == 1 && $p['completed'] == 0) :?>
+            <a href="account/habitAdderPage.php">
+                <p class="plus">+</p>
+            </a>
+            <?php if ($loggedIn) : ?>
+                <?php foreach ($queryHabit as $a) { ?>
                     <div class="achieve-habit">
-                        <div id=<?php echo $p['goalName'];?> class="circle clickable"></div>
-                        <p><?php echo $p['goalName'];
-                        $pGuard3 = false;?></p>
+                        <div id=<?php echo $a['goalID']; ?> class="circle clickable"></div>
+                        <p><?php echo $a['goalName'];
+                            $habitGuard = false; ?></p>
                     </div>
-                <?php endif;}?>
+                <?php } ?>
+                <?php foreach ($personalGL3 as $p) {
+                    if ($p['daily'] == 1 && $p['completed'] == 0) : ?>
+                        <div class="achieve-habit">
+                            <div id=<?php echo $p['goalName']; ?> class="circle clickable"></div>
+                            <p><?php echo $p['goalName'];
+                                $pGuard3 = false; ?></p>
+                        </div>
+                <?php endif;
+                } ?>
 
-                <?php if ($habitGuard && $pGuard3) :?>
-                <div class="achieve-habit">
-                    <div class="circle"></div>
-                    <p>Done for now!</p>
-                </div>
-                <?php endif;?>
+                <?php if ($habitGuard && $pGuard3) : ?>
+                    <div class="achieve-habit">
+                        <div class="circle"></div>
+                        <p>Done for now!</p>
+                    </div>
+                <?php endif; ?>
             <?php else : ?>
                 <div class="achieve-habit">
                     <div class="circle"></div>
                     <p>Try logging in</p>
                 </div>
-            <?php endif;?>
-    
+            <?php endif; ?>
+
             <div class="complete-bar">
                 <span></span>
                 <p><em>Completed Today</em></p>
                 <span></span>
             </div>
-            <?php if ($loggedIn) :?>
-            <?php foreach($queryHabitComp as $a) {?>
-                <div class="achieved-habit">
-                    <div class="circle"></div>
-                    <p><?php echo $a['goalName'];
-                    $habitCompGuard = false;?></p>
-                </div>
-            <?php }?>
-            <?php foreach($personalGL4 as $p) {
-                if ($p['daily'] == 1 && $p['completed'] == 1) :?>
+            <?php if ($loggedIn) : ?>
+                <?php foreach ($queryHabitComp as $a) { ?>
                     <div class="achieved-habit">
                         <div class="circle"></div>
-                        <p><?php echo $p['goalName'];
-                        $pGuard4 = false;?></p>
+                        <p><?php echo $a['goalName'];
+                            $habitCompGuard = false; ?></p>
                     </div>
-                <?php endif;}?>
-            <?php if ($habitCompGuard && $pGuard4) :?>
-                <div class="achieved-habit">
-                    <div class="circle"></div>
-                    <p>Check off a goal!</p>
-                </div>
-                <?php endif;?>
+                <?php } ?>
+                <?php foreach ($personalGL4 as $p) {
+                    if ($p['daily'] == 1 && $p['completed'] == 1) : ?>
+                        <div class="achieved-habit">
+                            <div class="circle"></div>
+                            <p><?php echo $p['goalName'];
+                                $pGuard4 = false; ?></p>
+                        </div>
+                <?php endif;
+                } ?>
+                <?php if ($habitCompGuard && $pGuard4) : ?>
+                    <div class="achieved-habit">
+                        <div class="circle"></div>
+                        <p>Check off a goal!</p>
+                    </div>
+                <?php endif; ?>
             <?php else : ?>
                 <div class="achieved-habit">
                     <div class="circle"></div>
                     <p>Try logging in</p>
                 </div>
-            <?php endif;?>
-            </div>
+            <?php endif; ?>
         </div>
+    </div>
 
     </div>
 
@@ -265,14 +274,14 @@ if (isset($_SESSION["username"])) {
         <li data-action="first">Delete</li>
     </ul>
 
-    <?php 
-        $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
-        include $IPATH;
+    <?php
+    $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/CSCI4300-Final-Project/php/footer.php";
+    include $IPATH;
     ?>
 
 </body>
 
-    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
-    <script src="../js/tracker.js"></script>
+<script src="../js/jquery/jquery-3.6.0.min.js"></script>
+<script src="../js/tracker.js"></script>
 
 </html>

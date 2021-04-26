@@ -36,6 +36,7 @@ $("#advance-the-day").click(function() {
 });
 
 var deleteString; // Global delete variable
+var deleteID;
 // Trigger action when the contexmenu is about to be shown
 $(document).bind("contextmenu", function (event) {
     
@@ -50,13 +51,13 @@ $(document).bind("contextmenu", function (event) {
         parent.className === "achieve-habit")
          ? parent : clickedElement;
 
+
     if(achieveElement.className === "achieve" ||
         achieveElement.className === "achieve-habit") {
         event.preventDefault();
-        // .children()[0].childNodes[0].data
-        deleteString = achieveElement.children[0].id;
+        deleteID = achieveElement.children[0].id;
+        deleteString = $.trim(achieveElement.children[1].childNodes[0].data);
     } else {
-        console.log("not achieve");
         return;
     }
     
@@ -99,9 +100,17 @@ $(".custom-menu li").click(function(){
                 '../php/personalGoalListDeleter.php', // location of your php script
                 {goalName: deleteString}, // any data you want to send to the script
                 function( data ){  // a function to deal with the returned information
-                    // Reload the page
-                    location.reload();
+                    // Nothing needed
                 });
+
+            $.post( 
+                '../php/goalListDeleter.php', // location of your php script
+                {goalID: deleteID}, // any data you want to send to the script
+                function( data ){  // a function to deal with the returned information
+                    // Nothing needed
+                });
+
+                location.reload();
             break;
     }
   

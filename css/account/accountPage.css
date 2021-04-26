@@ -95,3 +95,8 @@ input:invalid {
 table {
 	text-align: left;
 }
+
+.align-column {
+	display: flex;
+	flex-direction: column;
+}

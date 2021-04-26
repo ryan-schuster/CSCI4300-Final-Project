@@ -41,7 +41,8 @@ CREATE TABLE goalslist
 	goalID INT(6) UNSIGNED NOT NULL,
 	completed BIT DEFAULT 0,
 	FOREIGN KEY(userID) REFERENCES users(userID),
-	FOREIGN KEY(goalID) REFERENCES goals(goalID)
+	FOREIGN KEY(goalID) REFERENCES goals(goalID),
+	UNIQUE `unique_index`(`userID`, `goalID`)
 );
 
 -- Insert default goals into goals table
